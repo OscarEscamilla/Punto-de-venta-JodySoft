@@ -67,10 +67,10 @@ public class ViewEmpleados extends javax.swing.JPanel {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jb_anterior = new javax.swing.JButton();
+        jb_primero = new javax.swing.JButton();
+        jb_siguiente = new javax.swing.JButton();
+        jb_ultimo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,7 +124,7 @@ public class ViewEmpleados extends javax.swing.JPanel {
             }
         });
         jt_empleados.setOpaque(false);
-        jt_empleados.setSelectionBackground(new java.awt.Color(2, 119, 189));
+        jt_empleados.setSelectionBackground(new java.awt.Color(46, 125, 50));
         jScrollPane1.setViewportView(jt_empleados);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 1210, 120));
@@ -165,6 +165,7 @@ public class ViewEmpleados extends javax.swing.JPanel {
         jtf_telefono_empleado.setBorder(null);
         jPanel2.add(jtf_telefono_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 229, 20));
 
+        jb_reporte.setBackground(new java.awt.Color(76, 175, 80));
         jb_reporte.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_reporte.setForeground(new java.awt.Color(46, 125, 50));
         jb_reporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pdf1.png"))); // NOI18N
@@ -329,33 +330,33 @@ public class ViewEmpleados extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 1210, 300));
 
-        jButton3.setBackground(new java.awt.Color(34, 59, 75));
-        jButton3.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ic1on.png"))); // NOI18N
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 420, -1, -1));
+        jb_anterior.setBackground(new java.awt.Color(34, 59, 75));
+        jb_anterior.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        jb_anterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ic1on.png"))); // NOI18N
+        jb_anterior.setBorderPainted(false);
+        jb_anterior.setContentAreaFilled(false);
+        add(jb_anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 420, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(34, 59, 75));
-        jButton4.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/previous.png"))); // NOI18N
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
+        jb_primero.setBackground(new java.awt.Color(34, 59, 75));
+        jb_primero.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        jb_primero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/previous.png"))); // NOI18N
+        jb_primero.setBorderPainted(false);
+        jb_primero.setContentAreaFilled(false);
+        add(jb_primero, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(34, 59, 75));
-        jButton1.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, -1, -1));
+        jb_siguiente.setBackground(new java.awt.Color(34, 59, 75));
+        jb_siguiente.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        jb_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon.png"))); // NOI18N
+        jb_siguiente.setBorderPainted(false);
+        jb_siguiente.setContentAreaFilled(false);
+        add(jb_siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(34, 59, 75));
-        jButton2.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/next-track.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, -1, -1));
+        jb_ultimo.setBackground(new java.awt.Color(34, 59, 75));
+        jb_ultimo.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        jb_ultimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/next-track.png"))); // NOI18N
+        jb_ultimo.setBorderPainted(false);
+        jb_ultimo.setContentAreaFilled(false);
+        add(jb_ultimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nombre_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombre_empleadoActionPerformed
@@ -364,10 +365,6 @@ public class ViewEmpleados extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -392,11 +389,15 @@ public class ViewEmpleados extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JButton jb_actualizar;
+    public javax.swing.JButton jb_anterior;
     public javax.swing.JButton jb_cancelar;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_nuevo;
+    public javax.swing.JButton jb_primero;
     public javax.swing.JButton jb_reporte;
+    public javax.swing.JButton jb_siguiente;
+    public javax.swing.JButton jb_ultimo;
     public javax.swing.JTable jt_empleados;
     public javax.swing.JTextField jtf_apm_empleado;
     public javax.swing.JTextField jtf_app_empleado;
