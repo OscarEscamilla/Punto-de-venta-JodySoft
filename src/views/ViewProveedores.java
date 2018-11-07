@@ -9,12 +9,12 @@ package views;
  *
  * @author oscar
  */
-public class ViewEmpleados extends javax.swing.JPanel {
+public class ViewProveedores extends javax.swing.JPanel {
 
     /**
-     * Creates new form ViewEmpleados
+     * Creates new form ViewProveedores
      */
-    public ViewEmpleados() {
+    public ViewProveedores() {
         initComponents();
     }
 
@@ -27,11 +27,6 @@ public class ViewEmpleados extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel8 = new javax.swing.JLabel();
-        jtf_buscar_empleado = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtb_empleados = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jtf_colonia_empleado = new javax.swing.JTextField();
@@ -64,80 +59,16 @@ public class ViewEmpleados extends javax.swing.JPanel {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jtf_buscar_empleado = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
         jb_buscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtb_empleados = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(76, 175, 80));
+        setForeground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel8.setText("EMPLEADOS");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, -1));
-        add(jtf_buscar_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
-
-        jtb_empleados.setAutoCreateRowSorter(true);
-        jtb_empleados.setBackground(new java.awt.Color(254, 254, 254));
-        jtb_empleados.setBorder(null);
-        jtb_empleados.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
-        jtb_empleados.setForeground(new java.awt.Color(1, 1, 1));
-        jtb_empleados.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellido  Paterno", "Apellido Materno", "Calle", "Numero", "Colonia ", "Telefono"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtb_empleados.setGridColor(new java.awt.Color(46, 125, 50));
-        jtb_empleados.setOpaque(false);
-        jtb_empleados.setSelectionBackground(new java.awt.Color(46, 125, 50));
-        jtb_empleados.setSelectionForeground(new java.awt.Color(254, 254, 254));
-        jScrollPane1.setViewportView(jtb_empleados);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
-
-        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel12.setText("Buscar");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
 
         jPanel2.setBackground(new java.awt.Color(254, 254, 254));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -325,9 +256,79 @@ public class ViewEmpleados extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1210, 300));
 
+        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setText("PROVEEDORES");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, -1));
+        add(jtf_buscar_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
+
+        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel12.setText("Buscar");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
+
         jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
         jb_buscar.setContentAreaFilled(false);
         add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        jtb_empleados.setAutoCreateRowSorter(true);
+        jtb_empleados.setBackground(new java.awt.Color(254, 254, 254));
+        jtb_empleados.setBorder(null);
+        jtb_empleados.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
+        jtb_empleados.setForeground(new java.awt.Color(1, 1, 1));
+        jtb_empleados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellido  Paterno", "Apellido Materno", "Calle", "Numero", "Colonia ", "Telefono"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtb_empleados.setGridColor(new java.awt.Color(46, 125, 50));
+        jtb_empleados.setOpaque(false);
+        jtb_empleados.setSelectionBackground(new java.awt.Color(46, 125, 50));
+        jtb_empleados.setSelectionForeground(new java.awt.Color(254, 254, 254));
+        jScrollPane1.setViewportView(jtb_empleados);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nombre_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombre_empleadoActionPerformed

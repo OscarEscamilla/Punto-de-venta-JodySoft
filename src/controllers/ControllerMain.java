@@ -9,6 +9,7 @@ package controllers;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import models.ModelMain;
 import views.ViewMain;
 import views.ViewEmpleados;
@@ -38,6 +39,11 @@ public class ControllerMain {
         initComponents();
     }
     
+    
+    
+    
+    
+    
      private void setControllers() {
         controllerEmpleados = (ControllerEmpleados) controllers[0];
     }
@@ -48,6 +54,7 @@ public class ControllerMain {
     
     private void setActionListener(){
         viewMain.jm_empleados.addActionListener(actionListener);
+        viewMain.jmi_salir.addActionListener(actionListener);
     
     } 
     
@@ -61,7 +68,9 @@ public class ControllerMain {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == viewMain.jm_empleados){
                     empleados_Action_Performed();
-             }
+            }else if (e.getSource() == viewMain.jmi_salir){
+                salirActionPerformend();
+            }
         }
     };
     
@@ -78,5 +87,19 @@ public class ControllerMain {
         Component add = viewMain.jp_contenedor.add(viewEmpleados);
         viewMain.jp_contenedor.repaint();
         viewMain.jp_contenedor.revalidate();*/
+    }
+    
+    public void salirActionPerformend(){
+        
+        int des = JOptionPane.showConfirmDialog(null, "Realmente desea cerrar el sistema", "Cerrar Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (des != JOptionPane.YES_NO_OPTION ) {
+        } else {
+            try {
+                
+              System.exit(0);
+            } catch (Exception e) {
+              JOptionPane.showMessageDialog(null,"El sistema no se cerro correctamente" + e.getMessage());
+            }
+        }
     }
 }

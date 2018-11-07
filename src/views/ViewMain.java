@@ -19,14 +19,15 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jToolBar2 = new javax.swing.JToolBar();
-        jp_contenedor = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jm_puntos = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jmi_salir = new javax.swing.JMenuItem();
         jmi_administrar = new javax.swing.JMenu();
         jm_empleados = new javax.swing.JMenuItem();
+        jm_proveedores = new javax.swing.JMenuItem();
+        jm_proveedores1 = new javax.swing.JMenuItem();
+        jm_proveedores2 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -36,15 +37,10 @@ public class ViewMain extends javax.swing.JFrame {
         setBackground(new java.awt.Color(181, 50, 31));
         setUndecorated(true);
 
-        jToolBar2.setRollover(true);
-
-        jp_contenedor.setBackground(new java.awt.Color(254, 254, 254));
-        jp_contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jMenuBar1.setBackground(new java.awt.Color(46, 125, 50));
         jMenuBar1.setForeground(new java.awt.Color(3, 82, 200));
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ellipsis.png"))); // NOI18N
+        jm_puntos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ellipsis.png"))); // NOI18N
 
         jMenuItem3.setBackground(new java.awt.Color(46, 125, 50));
         jMenuItem3.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
@@ -56,16 +52,16 @@ public class ViewMain extends javax.swing.JFrame {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jm_puntos.add(jMenuItem3);
 
-        jMenuItem4.setBackground(new java.awt.Color(46, 125, 50));
-        jMenuItem4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jMenuItem4.setForeground(new java.awt.Color(254, 254, 254));
-        jMenuItem4.setText("Salir");
-        jMenuItem4.setContentAreaFilled(false);
-        jMenu1.add(jMenuItem4);
+        jmi_salir.setBackground(new java.awt.Color(46, 125, 50));
+        jmi_salir.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jmi_salir.setForeground(new java.awt.Color(254, 254, 254));
+        jmi_salir.setText("Salir");
+        jmi_salir.setContentAreaFilled(false);
+        jm_puntos.add(jmi_salir);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jm_puntos);
 
         jmi_administrar.setBackground(new java.awt.Color(254, 254, 254));
         jmi_administrar.setForeground(new java.awt.Color(254, 254, 254));
@@ -73,12 +69,37 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_administrar.setText("Administrar");
         jmi_administrar.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
+        jm_empleados.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jm_empleados.setBackground(new java.awt.Color(46, 125, 50));
         jm_empleados.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jm_empleados.setForeground(new java.awt.Color(254, 254, 254));
         jm_empleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
         jm_empleados.setText("Empleados");
         jmi_administrar.add(jm_empleados);
+
+        jm_proveedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jm_proveedores.setBackground(new java.awt.Color(46, 125, 50));
+        jm_proveedores.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_proveedores.setForeground(new java.awt.Color(254, 254, 254));
+        jm_proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
+        jm_proveedores.setText("Proveedores");
+        jmi_administrar.add(jm_proveedores);
+
+        jm_proveedores1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
+        jm_proveedores1.setBackground(new java.awt.Color(46, 125, 50));
+        jm_proveedores1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_proveedores1.setForeground(new java.awt.Color(254, 254, 254));
+        jm_proveedores1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/delivery-package-opened.png"))); // NOI18N
+        jm_proveedores1.setText("Productos");
+        jmi_administrar.add(jm_proveedores1);
+
+        jm_proveedores2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
+        jm_proveedores2.setBackground(new java.awt.Color(46, 125, 50));
+        jm_proveedores2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_proveedores2.setForeground(new java.awt.Color(254, 254, 254));
+        jm_proveedores2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/customer.png"))); // NOI18N
+        jm_proveedores2.setText("Clientes");
+        jmi_administrar.add(jm_proveedores2);
 
         jMenuBar1.add(jmi_administrar);
 
@@ -88,17 +109,11 @@ public class ViewMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jp_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 1142, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jp_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 426, Short.MAX_VALUE)
         );
 
         pack();
@@ -147,16 +162,17 @@ public class ViewMain extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JToolBar jToolBar2;
     public javax.swing.JMenuItem jm_empleados;
+    public javax.swing.JMenuItem jm_proveedores;
+    public javax.swing.JMenuItem jm_proveedores1;
+    public javax.swing.JMenuItem jm_proveedores2;
+    public javax.swing.JMenu jm_puntos;
     public javax.swing.JMenu jmi_administrar;
-    public javax.swing.JPanel jp_contenedor;
+    public javax.swing.JMenuItem jmi_salir;
     // End of variables declaration//GEN-END:variables
 }
 

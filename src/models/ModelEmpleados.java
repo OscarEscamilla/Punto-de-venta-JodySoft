@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,6 +36,15 @@ public class ModelEmpleados {
     private String colonia;
     private String RFC;
     private String telefono;
+    private DefaultTableModel modelo = new DefaultTableModel();
+
+    public DefaultTableModel getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(DefaultTableModel modelo) {
+        this.modelo = modelo;
+    }
 
     public String getId_empleado() {
         return id_empleado;
@@ -132,6 +142,7 @@ public class ModelEmpleados {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error_Actualizar_tabla" + e.getMessage());
         }
+
     }
 
     public void setValues() {
@@ -185,12 +196,13 @@ public class ModelEmpleados {
         if (des != JOptionPane.YES_NO_OPTION) {
         } else {
             try {
-                conexion = null;
-                conexion = ConectarBD();
                 ps = conexion.prepareStatement("DELETE FROM empleados WHERE id_empleado = ?");
                 ps.setString(1, id_empleado);
+
                 int res = ps.executeUpdate();
+                limpiaTabla();
                 actualizarEmpleados();
+                tablaEmpleado();
                 JOptionPane.showMessageDialog(null, "Contacto eliminado");
             } catch (SQLException ex) {
                 Logger.getLogger(ModelEmpleados.class.getName()).log(Level.SEVERE, null, ex);
@@ -224,67 +236,72 @@ public class ModelEmpleados {
         }
     }
 
-    public void moverPrimerRegistro() {
-        System.out.println("moverPrimerRegistro");
-        try {
-            if (rs.isFirst() == false) {
-                rs.first();
-                setValues();
-            }
+    public void añadirColumnasTabla() {
 
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error_S" + e.getMessage());
+        modelo.addColumn("id_empleado");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Apellido Paterno");
+        modelo.addColumn("Apellido Materno");
+        modelo.addColumn("Calle");
+        modelo.addColumn("Numero");
+        modelo.addColumn("Colonia");
+        modelo.addColumn("Telefono");
+        modelo.addColumn("rfc");
+
+    }
+
+    public void tablaEmpleado() {
+        try {
+
+//            rs.first();
+            String[] datos = new String[10];
+            System.out.println("comenzando while");
+            do {
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
+                datos[5] = rs.getString(6);
+                datos[6] = rs.getString(7);
+                datos[7] = rs.getString(8);
+                datos[8] = rs.getString(9);
+               
+
+                modelo.addRow(datos);
+
+                System.out.print(datos[0]);
+            } while (rs.next());
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error tabla " + ex.getMessage());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error tabla " + ex.getMessage());
         }
     }
 
-    public void moverSiguienteRegistro() {
-        System.out.println("moverSiguienteRegistro");
-        try {
-            if (rs.isLast() == false) {
-                rs.next();
-                setValues();
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error_S" + e.getMessage());
+    public void limpiaTabla() {
+        int filas = modelo.getRowCount();
+        for (int i = 0; i < filas; i++) {
+            modelo.removeRow(0);
         }
     }
 
-    /**
-     * Método que realiza las siguiente acciones: 1.- Moverse al anterior
-     * registro 2.- obtener el valor del nombre de rs y guardarlo en la variable
-     * nombre 3.- obtener el valor del email de rs y guardarlo en la variable
-     * email
-     */
-    public void moverAnteriorRegistro() {
-        System.out.println("moverAnteriorRegistro");
+    public void buscarEmpleado(String nombre) {
         try {
-            if (rs.isFirst() == false) {
-                rs.previous();
-                setValues();
+            conexion = null;
+            conexion = ConectarBD();
+
+            ps = conexion.prepareStatement("SELECT * FROM empleados WHERE nombre LIKE '%" + nombre + "%' OR id_empleado LIKE '%"+ nombre +"%';");
+            rs = ps.executeQuery();
+            if(rs.next() == false){
+                JOptionPane.showMessageDialog(null,"No se encontraron coincidencias en su busqueda");
             }
-
+            
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error_S" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "error- buscar" + e.getMessage());
         }
-    }
 
-    /**
-     * Método que realiza las siguiente acciones: 1.- Moverse al ultimo registro
-     * 2.- obtener el valor del nombre de rs y guardarlo en la ariable nombre
-     * 3.- obtener el valor del email de rs y guardarlo en la variable email
-     */
-    public void moverUltimoRegistro() {
-        System.out.println("moverUltimoRegistro");
-        try {
-            if (rs.isLast() == false) {
-                rs.last();
-                setValues();
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error_S" + e.getMessage());
-        }
     }
 
 }
