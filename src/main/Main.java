@@ -12,10 +12,13 @@ import controllers.ControllerMain;
 import models.ModelEmpleados;
 import controllers.ControllerEmpleados;
 import views.ViewEmpleados;
-/**
- *
- * @author Salvador Hernández Mendoza
- */
+
+import models.ModelProveedores;
+import controllers.ControllerProveedores;
+import views.ViewProveedores;
+
+
+
 public class Main {
 
     /**
@@ -25,16 +28,26 @@ public class Main {
         
         
         
-        ModelEmpleados modelVentas = new ModelEmpleados();
-        ViewEmpleados viewVentas = new ViewEmpleados();
-        ControllerEmpleados controllerVentas = new ControllerEmpleados(modelVentas, viewVentas);
+        ModelEmpleados modelEmpleados = new ModelEmpleados();
+        ViewEmpleados viewEmpleados = new ViewEmpleados();
+        ControllerEmpleados controllerEmpleados = new ControllerEmpleados(modelEmpleados, viewEmpleados);
+        
+        
+        ModelProveedores modelProveedores = new ModelProveedores();
+        ViewProveedores viewProveedores = new ViewProveedores();
+        ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
         
         
         
         
         
-        Object[] controllers = new Object[1];
-        controllers[0] = controllerVentas;
+        
+        
+        
+        Object[] controllers = new Object[2];
+        controllers[0] = controllerEmpleados;
+        controllers[1] = controllerProveedores;
+        
         
         ModelMain modelMain = new ModelMain();
         ViewMain viewMain = new ViewMain();

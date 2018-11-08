@@ -15,26 +15,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author oscar
  */
-public class ModelEmpleados extends Conexion{
-
-    private Connection conexion;
+public class ModelProveedores extends Conexion{
+     private Connection conexion;
     private Statement st;
     private ResultSet rs;
     private PreparedStatement ps;
 
-    private String id_empleado;
+    private String id_proveedor;
     private String nombre;
     private String ape_paterno;
     private String ape_materno;
     private String calle;
     private String numero;
     private String colonia;
-    private String RFC;
+    private String empresa;
     private String telefono;
     private DefaultTableModel modelo = new DefaultTableModel();
 
@@ -46,12 +44,12 @@ public class ModelEmpleados extends Conexion{
         this.modelo = modelo;
     }
 
-    public String getId_empleado() {
-        return id_empleado;
+    public String getId_proveedor() {
+        return id_proveedor;
     }
 
-    public void setId_empleado(String id_empleado) {
-        this.id_empleado = id_empleado;
+    public void setId_proveedor(String id_proveedor) {
+        this.id_proveedor = id_proveedor;
     }
 
     public String getNombre() {
@@ -102,12 +100,12 @@ public class ModelEmpleados extends Conexion{
         this.colonia = colonia;
     }
 
-    public String getRFC() {
-        return RFC;
+    public String getEmpresa() {
+        return empresa;
     }
 
-    public void setRFC(String RFC) {
-        this.RFC = RFC;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
     public String getTelefono() {
@@ -122,7 +120,7 @@ public class ModelEmpleados extends Conexion{
 //    public Connection ConectarBD() { //metodo para conexion a la base de datos 
 //        try {
 //            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/jodysoft", "root", "");
-//            actualizarEmpleados();
+//            actualizarProveedores();
 //            setValues();
 //        } catch (SQLException e) {
 //            JOptionPane.showMessageDialog(null, "Error en conexion" + e.getMessage());
@@ -130,11 +128,10 @@ public class ModelEmpleados extends Conexion{
 //        return conexion;
 //    }
 
-    public void actualizarEmpleados() {
+    public void actualizarProveedores() {
         try {
-            
-            String sql = "SELECT * FROM empleados;";
-            conexion = getConexion();
+              String sql = "SELECT * FROM proveedores;";
+              conexion = getConexion();
             ps = conexion.prepareStatement(sql);
             System.out.println(sql);
             rs = ps.executeQuery(sql);
@@ -149,7 +146,7 @@ public class ModelEmpleados extends Conexion{
 
     public void setValues() {
         try {
-            id_empleado = rs.getString("id_empleado");
+            id_proveedor = rs.getString("id_proveedor");
             nombre = rs.getString("nombre");
             ape_paterno = rs.getString("ape_paterno");
             ape_materno = rs.getString("ape_materno");
@@ -157,7 +154,7 @@ public class ModelEmpleados extends Conexion{
             numero = rs.getString("numero");
             colonia = rs.getString("colonia");
             telefono = rs.getString("telefono");
-            RFC = rs.getString("rfc");
+            empresa = rs.getString("empresa");
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error model 102: " + e.getMessage());
@@ -165,11 +162,11 @@ public class ModelEmpleados extends Conexion{
         }
     }
 
-    public void guardarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String RFC) {
+    public void guardarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String empresa) {
         try {
             conexion = null;
             conexion = getConexion();
-            ps = conexion.prepareStatement("INSERT INTO empleados (nombre, ape_paterno, ape_materno, calle, numero, colonia, telefono, rfc) VALUES (?,?,?,?,?,?,?,?)");
+            ps = conexion.prepareStatement("INSERT INTO proveedores (nombre, ape_paterno, ape_materno, calle, numero, colonia, telefono, empresa) VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, nombre);
             ps.setString(2, ape_paterno);
             ps.setString(3, ape_materno);
@@ -177,46 +174,46 @@ public class ModelEmpleados extends Conexion{
             ps.setString(5, numero);
             ps.setString(6, colonia);
             ps.setString(7, telefono);
-            ps.setString(8, RFC);
+            ps.setString(8, empresa);
             int devuelto = ps.executeUpdate();
             if (devuelto > 0) {
                 JOptionPane.showMessageDialog(null, "Datos guardados...");
 
-                actualizarEmpleados();
+                actualizarProveedores();
 
             } else {
                 JOptionPane.showMessageDialog(null, "Datos NO registrados");
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(ModelEmpleados.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ModelProveedores.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
     public void eliminarRegistro(String id) {
-        int des = JOptionPane.showConfirmDialog(null, "Realmente desea eliminar este contacto?", "Eliminar contacto", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int des = JOptionPane.showConfirmDialog(null, "Realmente desea eliminar este contacto?", "Eliminar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (des != JOptionPane.YES_NO_OPTION) {
         } else {
             try {
-                ps = conexion.prepareStatement("DELETE FROM empleados WHERE id_empleado = ?");
-                ps.setString(1, id_empleado);
+                ps = conexion.prepareStatement("DELETE FROM proveedores WHERE id_proveedor = ?");
+                ps.setString(1, id_proveedor);
 
                 int res = ps.executeUpdate();
                 limpiaTabla();
-                actualizarEmpleados();
-                tablaEmpleado();
-                JOptionPane.showMessageDialog(null, "Contacto eliminado");
+                actualizarProveedores();
+                tablaProveedor();
+                JOptionPane.showMessageDialog(null, "Eliminado...");
             } catch (SQLException ex) {
                 Logger.getLogger(ModelEmpleados.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
 
-    public void editarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String RFC, String id_empleado) {
+    public void editarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String empresa, String id_proveedor) {
         try {
             conexion = null;
             conexion = getConexion();
-            ps = conexion.prepareStatement("UPDATE empleados SET nombre=?, ape_paterno=?, ape_materno=? , calle=? , numero=?, colonia=? , telefono= ?, rfc=? WHERE id_empleado=?");
+            ps = conexion.prepareStatement("UPDATE proveedores SET nombre=?, ape_paterno=?, ape_materno=? , calle=? , numero=?, colonia=? , telefono= ?, empresa=? WHERE id_proveedor=?");
             ps.setString(1, nombre);
             ps.setString(2, ape_paterno);
             ps.setString(3, ape_materno);
@@ -224,12 +221,12 @@ public class ModelEmpleados extends Conexion{
             ps.setString(5, numero);
             ps.setString(6, colonia);
             ps.setString(7, telefono);
-            ps.setString(8, RFC);
-            ps.setString(9, id_empleado);
+            ps.setString(8, empresa);
+            ps.setString(9, id_proveedor);
             int resultado = ps.executeUpdate();
             if (resultado > 0) {
                 JOptionPane.showMessageDialog(null, "Datos de Actualizados");
-                actualizarEmpleados();
+                actualizarProveedores();
             } else {
                 JOptionPane.showMessageDialog(null, "Error 001-guardar");
             }
@@ -240,7 +237,7 @@ public class ModelEmpleados extends Conexion{
 
     public void añadirColumnasTabla() {
 
-        modelo.addColumn("id_empleado");
+        modelo.addColumn("Id_proveedor");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido Paterno");
         modelo.addColumn("Apellido Materno");
@@ -248,11 +245,11 @@ public class ModelEmpleados extends Conexion{
         modelo.addColumn("Numero");
         modelo.addColumn("Colonia");
         modelo.addColumn("Telefono");
-        modelo.addColumn("rfc");
+        modelo.addColumn("Empresa");
 
     }
 
-    public void tablaEmpleado() {
+    public void tablaProveedor() {
         try {
 
 //            rs.first();
@@ -294,7 +291,7 @@ public class ModelEmpleados extends Conexion{
             conexion = null;
             conexion = getConexion();
 
-            ps = conexion.prepareStatement("SELECT * FROM empleados WHERE nombre LIKE '%" + nombre + "%' OR id_empleado LIKE '%"+ nombre +"%';");
+            ps = conexion.prepareStatement("SELECT * FROM proveedores WHERE nombre LIKE '%" + nombre + "%' OR id_proveedor LIKE '%"+ nombre +"%';");
             rs = ps.executeQuery();
             if(rs.next() == false){
                 JOptionPane.showMessageDialog(null,"No se encontraron coincidencias en su busqueda");
@@ -305,5 +302,4 @@ public class ModelEmpleados extends Conexion{
         }
 
     }
-
 }

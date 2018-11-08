@@ -29,28 +29,28 @@ public class ViewProveedores extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
-        jtf_colonia_empleado = new javax.swing.JTextField();
-        jtf_rfc_empleado = new javax.swing.JTextField();
-        jtf_apm_empleado = new javax.swing.JTextField();
-        jtf_telefono_empleado = new javax.swing.JTextField();
+        jtf_colonia = new javax.swing.JTextField();
+        jtf_empresa = new javax.swing.JTextField();
+        jtf_apm_proveedor = new javax.swing.JTextField();
+        jtf_telefono = new javax.swing.JTextField();
         jb_reporte = new javax.swing.JButton();
-        jtf_app_empleado = new javax.swing.JTextField();
+        jtf_app_proveedor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jb_actualizar = new javax.swing.JButton();
-        jtf_calle_empleado = new javax.swing.JTextField();
+        jtf_calle = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jtf_numero_empleado = new javax.swing.JTextField();
+        jtf_numero = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jb_eliminar = new javax.swing.JButton();
         jb_guardar = new javax.swing.JButton();
-        jtf_nombre_empleado = new javax.swing.JTextField();
+        jtf_nombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jb_cancelar = new javax.swing.JButton();
-        jtf_id_empleado = new javax.swing.JTextField();
+        jtf_id_proveedor = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -64,7 +64,7 @@ public class ViewProveedores extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jb_buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtb_empleados = new javax.swing.JTable();
+        jtb_proveedores = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(76, 175, 80));
         setForeground(new java.awt.Color(76, 175, 80));
@@ -81,25 +81,25 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_nuevo.setContentAreaFilled(false);
         jPanel2.add(jb_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, -1, -1));
 
-        jtf_colonia_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_colonia_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_colonia_empleado.setBorder(null);
-        jPanel2.add(jtf_colonia_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 229, 20));
+        jtf_colonia.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_colonia.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_colonia.setBorder(null);
+        jPanel2.add(jtf_colonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 229, 20));
 
-        jtf_rfc_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_rfc_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_rfc_empleado.setBorder(null);
-        jPanel2.add(jtf_rfc_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 229, 20));
+        jtf_empresa.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_empresa.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_empresa.setBorder(null);
+        jPanel2.add(jtf_empresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 229, 20));
 
-        jtf_apm_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_apm_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_apm_empleado.setBorder(null);
-        jPanel2.add(jtf_apm_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 229, 20));
+        jtf_apm_proveedor.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_apm_proveedor.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_apm_proveedor.setBorder(null);
+        jPanel2.add(jtf_apm_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 229, 20));
 
-        jtf_telefono_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_telefono_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_telefono_empleado.setBorder(null);
-        jPanel2.add(jtf_telefono_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 229, 20));
+        jtf_telefono.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_telefono.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_telefono.setBorder(null);
+        jPanel2.add(jtf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 229, 20));
 
         jb_reporte.setBackground(new java.awt.Color(76, 175, 80));
         jb_reporte.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
@@ -110,10 +110,10 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_reporte.setContentAreaFilled(false);
         jPanel2.add(jb_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, -1));
 
-        jtf_app_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_app_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_app_empleado.setBorder(null);
-        jPanel2.add(jtf_app_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 229, 20));
+        jtf_app_proveedor.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_app_proveedor.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_app_proveedor.setBorder(null);
+        jPanel2.add(jtf_app_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 229, 20));
 
         jLabel3.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(46, 125, 50));
@@ -128,10 +128,10 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_actualizar.setContentAreaFilled(false);
         jPanel2.add(jb_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 60, -1, -1));
 
-        jtf_calle_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_calle_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_calle_empleado.setBorder(null);
-        jPanel2.add(jtf_calle_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 229, 20));
+        jtf_calle.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_calle.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_calle.setBorder(null);
+        jPanel2.add(jtf_calle, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 229, 20));
 
         jLabel6.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(46, 125, 50));
@@ -143,10 +143,10 @@ public class ViewProveedores extends javax.swing.JPanel {
         jLabel4.setText("Telefono");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 150, -1));
 
-        jtf_numero_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_numero_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_numero_empleado.setBorder(null);
-        jPanel2.add(jtf_numero_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 229, 20));
+        jtf_numero.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_numero.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_numero.setBorder(null);
+        jPanel2.add(jtf_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 229, 20));
 
         jLabel7.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(46, 125, 50));
@@ -184,19 +184,19 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_guardar.setContentAreaFilled(false);
         jPanel2.add(jb_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 120, -1, -1));
 
-        jtf_nombre_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_nombre_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_nombre_empleado.setBorder(null);
-        jtf_nombre_empleado.addActionListener(new java.awt.event.ActionListener() {
+        jtf_nombre.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_nombre.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_nombre.setBorder(null);
+        jtf_nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf_nombre_empleadoActionPerformed(evt);
+                jtf_nombreActionPerformed(evt);
             }
         });
-        jPanel2.add(jtf_nombre_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 229, 20));
+        jPanel2.add(jtf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 229, 20));
 
         jLabel5.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel5.setText("RFC");
+        jLabel5.setText("Empresa");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 150, -1));
 
         jb_cancelar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
@@ -207,12 +207,12 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_cancelar.setContentAreaFilled(false);
         jPanel2.add(jb_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 180, -1, -1));
 
-        jtf_id_empleado.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_id_empleado.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_id_empleado.setBorder(null);
-        jtf_id_empleado.setCaretColor(new java.awt.Color(2, 119, 189));
-        jtf_id_empleado.setOpaque(false);
-        jPanel2.add(jtf_id_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 229, 20));
+        jtf_id_proveedor.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_id_proveedor.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_id_proveedor.setBorder(null);
+        jtf_id_proveedor.setCaretColor(new java.awt.Color(2, 119, 189));
+        jtf_id_proveedor.setOpaque(false);
+        jPanel2.add(jtf_id_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 229, 20));
 
         jSeparator1.setForeground(new java.awt.Color(46, 125, 50));
         jSeparator1.setToolTipText("");
@@ -272,12 +272,12 @@ public class ViewProveedores extends javax.swing.JPanel {
         jb_buscar.setContentAreaFilled(false);
         add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
 
-        jtb_empleados.setAutoCreateRowSorter(true);
-        jtb_empleados.setBackground(new java.awt.Color(254, 254, 254));
-        jtb_empleados.setBorder(null);
-        jtb_empleados.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
-        jtb_empleados.setForeground(new java.awt.Color(1, 1, 1));
-        jtb_empleados.setModel(new javax.swing.table.DefaultTableModel(
+        jtb_proveedores.setAutoCreateRowSorter(true);
+        jtb_proveedores.setBackground(new java.awt.Color(254, 254, 254));
+        jtb_proveedores.setBorder(null);
+        jtb_proveedores.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
+        jtb_proveedores.setForeground(new java.awt.Color(1, 1, 1));
+        jtb_proveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -322,18 +322,18 @@ public class ViewProveedores extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jtb_empleados.setGridColor(new java.awt.Color(46, 125, 50));
-        jtb_empleados.setOpaque(false);
-        jtb_empleados.setSelectionBackground(new java.awt.Color(46, 125, 50));
-        jtb_empleados.setSelectionForeground(new java.awt.Color(254, 254, 254));
-        jScrollPane1.setViewportView(jtb_empleados);
+        jtb_proveedores.setGridColor(new java.awt.Color(46, 125, 50));
+        jtb_proveedores.setOpaque(false);
+        jtb_proveedores.setSelectionBackground(new java.awt.Color(46, 125, 50));
+        jtb_proveedores.setSelectionForeground(new java.awt.Color(254, 254, 254));
+        jScrollPane1.setViewportView(jtb_proveedores);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtf_nombre_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombre_empleadoActionPerformed
+    private void jtf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_nombre_empleadoActionPerformed
+    }//GEN-LAST:event_jtf_nombreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -364,16 +364,16 @@ public class ViewProveedores extends javax.swing.JPanel {
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JButton jb_reporte;
-    public javax.swing.JTable jtb_empleados;
-    public javax.swing.JTextField jtf_apm_empleado;
-    public javax.swing.JTextField jtf_app_empleado;
+    public javax.swing.JTable jtb_proveedores;
+    public javax.swing.JTextField jtf_apm_proveedor;
+    public javax.swing.JTextField jtf_app_proveedor;
     public javax.swing.JTextField jtf_buscar_empleado;
-    public javax.swing.JTextField jtf_calle_empleado;
-    public javax.swing.JTextField jtf_colonia_empleado;
-    public javax.swing.JTextField jtf_id_empleado;
-    public javax.swing.JTextField jtf_nombre_empleado;
-    public javax.swing.JTextField jtf_numero_empleado;
-    public javax.swing.JTextField jtf_rfc_empleado;
-    public javax.swing.JTextField jtf_telefono_empleado;
+    public javax.swing.JTextField jtf_calle;
+    public javax.swing.JTextField jtf_colonia;
+    public javax.swing.JTextField jtf_empresa;
+    public javax.swing.JTextField jtf_id_proveedor;
+    public javax.swing.JTextField jtf_nombre;
+    public javax.swing.JTextField jtf_numero;
+    public javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
 }

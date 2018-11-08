@@ -3,11 +3,6 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import models.ModelEmpleados;
 import views.ViewEmpleados;
 
@@ -50,7 +45,7 @@ public class ControllerEmpleados {
     }
 
     public void initDB() {
-        modelEmpleados.ConectarBD();
+        modelEmpleados.actualizarEmpleados();
         getValues();
     }
     
@@ -166,7 +161,7 @@ public class ControllerEmpleados {
     }
 
     public void eliminarActionPerformed() {
-        enviarDatos();
+        //enviarDatos();
         modelEmpleados.eliminarRegistro(viewEmpleados.jtf_id_empleado.getText());
         modelEmpleados.actualizarEmpleados();
         getValues();
@@ -175,7 +170,7 @@ public class ControllerEmpleados {
     }
     
     public void tablaEmpleadosActionPerformed(){
-        modelEmpleados.actualizarEmpleados();
+        //modelEmpleados.actualizarEmpleados();
         
         modelEmpleados.añadirColumnasTabla();
 
@@ -194,11 +189,6 @@ public class ControllerEmpleados {
         viewEmpleados.jb_nuevo.setEnabled(false);
         viewEmpleados.jb_cancelar.setEnabled(true);
         viewEmpleados.jb_guardar.setEnabled(true);
-        
-        
-     
-       
-
     }
 
     public void reporteActionPerformed() {
