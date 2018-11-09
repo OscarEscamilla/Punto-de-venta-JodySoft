@@ -17,6 +17,10 @@ import models.ModelProveedores;
 import controllers.ControllerProveedores;
 import views.ViewProveedores;
 
+import models.ModelClientes;
+import controllers.ControllerClientes;
+import views.ViewClientes;
+
 
 
 public class Main {
@@ -38,15 +42,21 @@ public class Main {
         ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
         
         
+        ModelClientes modelClientes = new ModelClientes();
+        ViewClientes viewClientes = new ViewClientes();
+        ControllerClientes controllerClientes = new ControllerClientes(modelClientes, viewClientes);
         
         
         
         
         
         
-        Object[] controllers = new Object[2];
+        
+        
+        Object[] controllers = new Object[3];
         controllers[0] = controllerEmpleados;
         controllers[1] = controllerProveedores;
+        controllers[2] = controllerClientes;
         
         
         ModelMain modelMain = new ModelMain();

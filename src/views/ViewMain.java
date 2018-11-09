@@ -27,7 +27,7 @@ public class ViewMain extends javax.swing.JFrame {
         jm_empleados = new javax.swing.JMenuItem();
         jm_proveedores = new javax.swing.JMenuItem();
         jm_proveedores1 = new javax.swing.JMenuItem();
-        jm_proveedores2 = new javax.swing.JMenuItem();
+        jm_clientes = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -93,13 +93,13 @@ public class ViewMain extends javax.swing.JFrame {
         jm_proveedores1.setText("Productos");
         jmi_administrar.add(jm_proveedores1);
 
-        jm_proveedores2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
-        jm_proveedores2.setBackground(new java.awt.Color(46, 125, 50));
-        jm_proveedores2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jm_proveedores2.setForeground(new java.awt.Color(254, 254, 254));
-        jm_proveedores2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/customer.png"))); // NOI18N
-        jm_proveedores2.setText("Clientes");
-        jmi_administrar.add(jm_proveedores2);
+        jm_clientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
+        jm_clientes.setBackground(new java.awt.Color(46, 125, 50));
+        jm_clientes.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_clientes.setForeground(new java.awt.Color(254, 254, 254));
+        jm_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/customer.png"))); // NOI18N
+        jm_clientes.setText("Clientes");
+        jmi_administrar.add(jm_clientes);
 
         jMenuBar1.add(jmi_administrar);
 
@@ -166,10 +166,10 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    public javax.swing.JMenuItem jm_clientes;
     public javax.swing.JMenuItem jm_empleados;
     public javax.swing.JMenuItem jm_proveedores;
     public javax.swing.JMenuItem jm_proveedores1;
-    public javax.swing.JMenuItem jm_proveedores2;
     public javax.swing.JMenu jm_puntos;
     public javax.swing.JMenu jmi_administrar;
     public javax.swing.JMenuItem jmi_salir;

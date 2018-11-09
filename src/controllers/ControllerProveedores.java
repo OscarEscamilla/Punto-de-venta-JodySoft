@@ -92,7 +92,7 @@ public class ControllerProveedores {
                 
             } else if (e.getSource() == viewProveedores.jb_buscar) {
                 modelProveedores.limpiaTabla();
-                modelProveedores.buscarEmpleado(viewProveedores.jtf_buscar_empleado.getText());
+                modelProveedores.buscarRegistro(viewProveedores.jtf_buscar_empleado.getText());
                 modelProveedores.tablaProveedor();
             }
         }

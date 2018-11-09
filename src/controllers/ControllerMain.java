@@ -5,15 +5,11 @@
  */
 package controllers;
 
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import models.ModelMain;
 import views.ViewMain;
-
-import views.ViewEmpleados;
-import views.ViewProveedores;
 
 public class ControllerMain {
 
@@ -24,9 +20,11 @@ public class ControllerMain {
 
     private ControllerEmpleados controllerEmpleados;
     //private ViewEmpleados viewEmpleados;
-    
+
     private ControllerProveedores controllerProveedores;
     //private ViewProveedores viewProveedores;
+
+    private ControllerClientes controllerClientes;
 
     public ControllerMain(ModelMain modelMain, ViewMain viewMain, Object[] controllers) {
         this.modelMain = modelMain;
@@ -40,13 +38,15 @@ public class ControllerMain {
     private void setControllers() {
         controllerEmpleados = (ControllerEmpleados) controllers[0];
         controllerProveedores = (ControllerProveedores) controllers[1];
-        
+        controllerClientes = (ControllerClientes) controllers[2];
+
     }
 
     private void setActionListener() {
         viewMain.jm_empleados.addActionListener(actionListener);
         viewMain.jmi_salir.addActionListener(actionListener);
         viewMain.jm_proveedores.addActionListener(actionListener);
+        viewMain.jm_clientes.addActionListener(actionListener);
 
     }
 
@@ -59,28 +59,32 @@ public class ControllerMain {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewMain.jm_empleados) {
                 empleados_Action_Performed();
-            } else if (e.getSource() == viewMain.jm_proveedores ) {
+            } else if (e.getSource() == viewMain.jm_proveedores) {
                 proveedoresActionPerformed();
             } else if (e.getSource() == viewMain.jmi_salir) {
                 salirActionPerformend();
+            } else if (e.getSource() == viewMain.jm_clientes) {
+                clientesActionPerformed();
             }
         }
     };
-    
-    
-        
-    
-    
+
     public void empleados_Action_Performed() {
-            viewMain.setContentPane(controllerEmpleados.viewEmpleados);
-            viewMain.revalidate();
-            viewMain.repaint();
+        viewMain.setContentPane(controllerEmpleados.viewEmpleados);
+        viewMain.revalidate();
+        viewMain.repaint();
     }
-    
-    public void proveedoresActionPerformed(){
-            viewMain.setContentPane(controllerProveedores.viewProveedores);
-            viewMain.revalidate();
-            viewMain.repaint();
+
+    public void proveedoresActionPerformed() {
+        viewMain.setContentPane(controllerProveedores.viewProveedores);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+
+    public void clientesActionPerformed() {
+        viewMain.setContentPane(controllerClientes.viewClientes);
+        viewMain.revalidate();
+        viewMain.repaint();
     }
 
     public void salirActionPerformend() {
@@ -96,7 +100,5 @@ public class ControllerMain {
             }
         }
     }
-        
-        
-        
-    }
+
+}
