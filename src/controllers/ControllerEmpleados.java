@@ -96,6 +96,7 @@ public class ControllerEmpleados {
 
                 reporteActionPerformed();
             } else if (e.getSource() == viewEmpleados.jb_buscar){
+                
                 modelEmpleados.limpiaTabla();
                 modelEmpleados.buscarEmpleado(viewEmpleados.jtf_buscar_empleado.getText());
                 modelEmpleados.tablaEmpleado();

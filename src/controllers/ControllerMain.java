@@ -11,6 +11,9 @@ import javax.swing.JOptionPane;
 import models.ModelMain;
 import views.ViewMain;
 
+
+
+
 public class ControllerMain {
 
     private ViewMain viewMain;
@@ -26,6 +29,8 @@ public class ControllerMain {
 
     private ControllerClientes controllerClientes;
 
+    private ControllerCompras controllerCompras;
+    
     public ControllerMain(ModelMain modelMain, ViewMain viewMain, Object[] controllers) {
         this.modelMain = modelMain;
         this.viewMain = viewMain;
@@ -39,6 +44,7 @@ public class ControllerMain {
         controllerEmpleados = (ControllerEmpleados) controllers[0];
         controllerProveedores = (ControllerProveedores) controllers[1];
         controllerClientes = (ControllerClientes) controllers[2];
+        controllerCompras = (ControllerCompras) controllers[3];
 
     }
 
@@ -47,6 +53,7 @@ public class ControllerMain {
         viewMain.jmi_salir.addActionListener(actionListener);
         viewMain.jm_proveedores.addActionListener(actionListener);
         viewMain.jm_clientes.addActionListener(actionListener);
+        viewMain.jm_registrar_compra.addActionListener(actionListener);
 
     }
 
@@ -65,6 +72,8 @@ public class ControllerMain {
                 salirActionPerformend();
             } else if (e.getSource() == viewMain.jm_clientes) {
                 clientesActionPerformed();
+            } else if (e.getSource() == viewMain.jm_registrar_compra){
+                comprasRegistrar();
             }
         }
     };
@@ -85,6 +94,14 @@ public class ControllerMain {
         viewMain.setContentPane(controllerClientes.viewClientes);
         viewMain.revalidate();
         viewMain.repaint();
+    }
+    
+    public void comprasRegistrar(){
+        viewMain.setContentPane(controllerCompras.viewCompras);
+        viewMain.revalidate();
+        viewMain.repaint();
+        
+        
     }
 
     public void salirActionPerformend() {

@@ -45,7 +45,6 @@ public class ViewClientes extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jb_eliminar = new javax.swing.JButton();
         jb_guardar = new javax.swing.JButton();
         jtf_nombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -60,6 +59,7 @@ public class ViewClientes extends javax.swing.JPanel {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jcb_tipo = new javax.swing.JComboBox<>();
+        jb_eliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_clientes = new javax.swing.JTable();
         jtf_buscar = new javax.swing.JTextField();
@@ -73,6 +73,7 @@ public class ViewClientes extends javax.swing.JPanel {
         jLabel8.setBackground(new java.awt.Color(254, 254, 254));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/red.png"))); // NOI18N
         jLabel8.setText("CLIENTES");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, -1));
 
@@ -169,14 +170,6 @@ public class ViewClientes extends javax.swing.JPanel {
         jLabel11.setText("Calle");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 150, -1));
 
-        jb_eliminar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
-        jb_eliminar.setForeground(new java.awt.Color(46, 125, 50));
-        jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/del.png"))); // NOI18N
-        jb_eliminar.setText("Elimiar");
-        jb_eliminar.setBorderPainted(false);
-        jb_eliminar.setContentAreaFilled(false);
-        jPanel2.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 120, -1, -1));
-
         jb_guardar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_guardar.setForeground(new java.awt.Color(46, 125, 50));
         jb_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/disquette.png"))); // NOI18N
@@ -260,6 +253,14 @@ public class ViewClientes extends javax.swing.JPanel {
         jcb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Factura" }));
         jcb_tipo.setOpaque(false);
         jPanel2.add(jcb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 179, 230, 20));
+
+        jb_eliminar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
+        jb_eliminar.setForeground(new java.awt.Color(46, 125, 50));
+        jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/del.png"))); // NOI18N
+        jb_eliminar.setText("Elimiar");
+        jb_eliminar.setBorderPainted(false);
+        jb_eliminar.setContentAreaFilled(false);
+        jPanel2.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 120, -1, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1210, 300));
 

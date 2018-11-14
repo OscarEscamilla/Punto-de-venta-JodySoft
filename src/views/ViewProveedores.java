@@ -259,8 +259,9 @@ public class ViewProveedores extends javax.swing.JPanel {
         jLabel8.setBackground(new java.awt.Color(254, 254, 254));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/camion-de-reparto.png"))); // NOI18N
         jLabel8.setText("PROVEEDORES");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, -1));
         add(jtf_buscar_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
 
         jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N

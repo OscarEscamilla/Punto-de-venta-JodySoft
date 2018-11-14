@@ -72,8 +72,9 @@ public class ViewEmpleados extends javax.swing.JPanel {
         jLabel8.setBackground(new java.awt.Color(254, 254, 254));
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/jefe.png"))); // NOI18N
         jLabel8.setText("EMPLEADOS");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 230, -1));
         add(jtf_buscar_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
 
         jtb_empleados.setAutoCreateRowSorter(true);

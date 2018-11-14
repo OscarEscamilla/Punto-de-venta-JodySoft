@@ -100,7 +100,7 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `jodysoft`.`compra`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jodysoft`.`compra` (
+CREATE TABLE IF NOT EXISTS `jodysoft`.`compras` (
   `id_compra` INT(11) NOT NULL AUTO_INCREMENT,
   `total` FLOAT NOT NULL,
   `id_proveedor` INT(11) NOT NULL,
