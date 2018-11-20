@@ -151,7 +151,7 @@ public class ModelClientes extends Conexion {
         }
     }
 
-    public void guardarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String empresa) {
+    public void guardarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String tipo) {
         try {
             conexion = null;
             conexion = getConexion();
@@ -198,20 +198,21 @@ public class ModelClientes extends Conexion {
         }
     }
 
-    public void editarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String numero, String colonia, String telefono, String tipo, String id_cliente) {
+    public void editarRegistro(String nombre, String ape_paterno, String ape_materno, String calle, String colonia, String numero,  String telefono, String tipo, String id_cliente) {
         try {
             conexion = null;
             conexion = getConexion();
-            ps = conexion.prepareStatement("UPDATE clientes SET nombre=?, ape_paterno=?, ape_materno=? , calle=? , numero=?, colonia=? , telefono= ?, tipo=? WHERE id_proveedor=?");
+            ps = conexion.prepareStatement("UPDATE clientes SET nombre=?, ape_paterno=?, ape_materno=? , calle=? , colonia=? ,numero=?,  tipo=?, telefono= ? WHERE id_cliente=?");
             ps.setString(1, nombre);
             ps.setString(2, ape_paterno);
             ps.setString(3, ape_materno);
             ps.setString(4, calle);
-            ps.setString(5, numero);
-            ps.setString(6, colonia);
-            ps.setString(7, telefono);
-            ps.setString(8, tipo);
+            ps.setString(5, colonia);
+            ps.setString(6, numero);
+            ps.setString(7, tipo);
+            ps.setString(8, telefono);
             ps.setString(9, id_cliente);
+            
             int resultado = ps.executeUpdate();
             if (resultado > 0) {
                 JOptionPane.showMessageDialog(null, "Datos de Actualizados");
@@ -233,8 +234,8 @@ public class ModelClientes extends Conexion {
         modelo.addColumn("Calle");
         modelo.addColumn("Numero");
         modelo.addColumn("Colonia");
-        modelo.addColumn("Telefono");
         modelo.addColumn("Tipo");
+        modelo.addColumn("Telefono");
 
     }
     

@@ -27,11 +27,8 @@ public class ViewEmpleados extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel8 = new javax.swing.JLabel();
-        jtf_buscar_empleado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_empleados = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jtf_colonia_empleado = new javax.swing.JTextField();
@@ -64,18 +61,14 @@ public class ViewEmpleados extends javax.swing.JPanel {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jb_buscar = new javax.swing.JButton();
+        jtf_buscar = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/jefe.png"))); // NOI18N
-        jLabel8.setText("EMPLEADOS");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 230, -1));
-        add(jtf_buscar_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
 
         jtb_empleados.setAutoCreateRowSorter(true);
         jtb_empleados.setBackground(new java.awt.Color(254, 254, 254));
@@ -134,11 +127,6 @@ public class ViewEmpleados extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jtb_empleados);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
-
-        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel12.setText("Buscar");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
 
         jPanel2.setBackground(new java.awt.Color(254, 254, 254));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -326,9 +314,27 @@ public class ViewEmpleados extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1210, 300));
 
+        jPanel1.setBackground(new java.awt.Color(46, 125, 50));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/redes.png"))); // NOI18N
+        jLabel8.setText("EMPLEADOS");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
         jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
         jb_buscar.setContentAreaFilled(false);
-        add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+        jPanel1.add(jtf_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
+
+        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel12.setText("Buscar");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nombre_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombre_empleadoActionPerformed
@@ -347,6 +353,7 @@ public class ViewEmpleados extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -367,7 +374,7 @@ public class ViewEmpleados extends javax.swing.JPanel {
     public javax.swing.JTable jtb_empleados;
     public javax.swing.JTextField jtf_apm_empleado;
     public javax.swing.JTextField jtf_app_empleado;
-    public javax.swing.JTextField jtf_buscar_empleado;
+    public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_calle_empleado;
     public javax.swing.JTextField jtf_colonia_empleado;
     public javax.swing.JTextField jtf_id_empleado;

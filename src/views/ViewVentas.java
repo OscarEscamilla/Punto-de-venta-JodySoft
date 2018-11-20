@@ -9,12 +9,12 @@ package views;
  *
  * @author oscar
  */
-public class ViewClientes extends javax.swing.JPanel {
+public class ViewVentas extends javax.swing.JPanel {
 
     /**
-     * Creates new form ViewClientes
+     * Creates new form ViewVentas
      */
-    public ViewClientes() {
+    public ViewVentas() {
         initComponents();
     }
 
@@ -27,6 +27,10 @@ public class ViewClientes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtb_clientes = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
         jtf_colonia = new javax.swing.JTextField();
@@ -59,17 +63,79 @@ public class ViewClientes extends javax.swing.JPanel {
         jSeparator9 = new javax.swing.JSeparator();
         jcb_tipo = new javax.swing.JComboBox<>();
         jb_eliminar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtb_clientes = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jtf_buscar = new javax.swing.JTextField();
-        jb_buscar = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(76, 175, 80));
-        setForeground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(46, 125, 50));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/monedas.png"))); // NOI18N
+        jLabel8.setText("VENTAS");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 60));
+
+        jtb_clientes.setAutoCreateRowSorter(true);
+        jtb_clientes.setBackground(new java.awt.Color(254, 254, 254));
+        jtb_clientes.setBorder(null);
+        jtb_clientes.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
+        jtb_clientes.setForeground(new java.awt.Color(1, 1, 1));
+        jtb_clientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellido  Paterno", "Apellido Materno", "Calle", "Numero", "Colonia ", "Telefono"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtb_clientes.setGridColor(new java.awt.Color(46, 125, 50));
+        jtb_clientes.setOpaque(false);
+        jtb_clientes.setSelectionBackground(new java.awt.Color(46, 125, 50));
+        jtb_clientes.setSelectionForeground(new java.awt.Color(254, 254, 254));
+        jScrollPane1.setViewportView(jtb_clientes);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
 
         jPanel2.setBackground(new java.awt.Color(254, 254, 254));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -257,86 +323,6 @@ public class ViewClientes extends javax.swing.JPanel {
         jPanel2.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 120, -1, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1210, 300));
-
-        jtb_clientes.setAutoCreateRowSorter(true);
-        jtb_clientes.setBackground(new java.awt.Color(254, 254, 254));
-        jtb_clientes.setBorder(null);
-        jtb_clientes.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
-        jtb_clientes.setForeground(new java.awt.Color(1, 1, 1));
-        jtb_clientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellido  Paterno", "Apellido Materno", "Calle", "Numero", "Colonia ", "Telefono"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtb_clientes.setGridColor(new java.awt.Color(46, 125, 50));
-        jtb_clientes.setOpaque(false);
-        jtb_clientes.setSelectionBackground(new java.awt.Color(46, 125, 50));
-        jtb_clientes.setSelectionForeground(new java.awt.Color(254, 254, 254));
-        jScrollPane1.setViewportView(jtb_clientes);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
-
-        jPanel1.setBackground(new java.awt.Color(46, 125, 50));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/red.png"))); // NOI18N
-        jLabel8.setText("CLIENTES");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
-        jPanel1.add(jtf_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
-
-        jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
-        jb_buscar.setContentAreaFilled(false);
-        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel12.setText("Buscar");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombreActionPerformed
@@ -347,7 +333,6 @@ public class ViewClientes extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -367,7 +352,6 @@ public class ViewClientes extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JButton jb_actualizar;
-    public javax.swing.JButton jb_buscar;
     public javax.swing.JButton jb_cancelar;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_guardar;
@@ -377,7 +361,6 @@ public class ViewClientes extends javax.swing.JPanel {
     public javax.swing.JTable jtb_clientes;
     public javax.swing.JTextField jtf_ape_materno;
     public javax.swing.JTextField jtf_ape_paterno;
-    public javax.swing.JTextField jtf_buscar;
     public javax.swing.JTextField jtf_calle;
     public javax.swing.JTextField jtf_colonia;
     public javax.swing.JTextField jtf_id_cliente;

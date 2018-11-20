@@ -118,6 +118,12 @@ public class ViewCompras extends javax.swing.JPanel {
         jLabel13.setText("Nombre");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
         jPanel3.add(jtf_empresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 210, 20));
+
+        jtf_buscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtf_buscarKeyReleased(evt);
+            }
+        });
         jPanel3.add(jtf_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 180, 20));
         jPanel3.add(jtf_nombre_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 210, 20));
         jPanel3.add(jtf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 20));
@@ -419,6 +425,10 @@ public class ViewCompras extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jtf_buscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtf_buscarKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_buscarKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

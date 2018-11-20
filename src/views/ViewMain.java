@@ -34,12 +34,13 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_administrar3 = new javax.swing.JMenu();
         jm_empleados1 = new javax.swing.JMenuItem();
         jmi_administrar4 = new javax.swing.JMenu();
-        jm_empleados2 = new javax.swing.JMenuItem();
+        jm_reportes = new javax.swing.JMenuItem();
         jmi_administrar = new javax.swing.JMenu();
         jm_empleados = new javax.swing.JMenuItem();
         jm_proveedores = new javax.swing.JMenuItem();
-        jm_proveedores1 = new javax.swing.JMenuItem();
+        jm_productos = new javax.swing.JMenuItem();
         jm_clientes = new javax.swing.JMenuItem();
+        jm_sucursales = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -88,7 +89,7 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_administrar1.setText("Compras");
         jmi_administrar1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jm_historial_compras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        jm_historial_compras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F9, 0));
         jm_historial_compras.setBackground(new java.awt.Color(48, 48, 48));
         jm_historial_compras.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jm_historial_compras.setForeground(new java.awt.Color(254, 254, 254));
@@ -96,7 +97,7 @@ public class ViewMain extends javax.swing.JFrame {
         jm_historial_compras.setText("Hisorial");
         jmi_administrar1.add(jm_historial_compras);
 
-        jm_registrar_compra.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jm_registrar_compra.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, 0));
         jm_registrar_compra.setBackground(new java.awt.Color(48, 48, 48));
         jm_registrar_compra.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jm_registrar_compra.setForeground(new java.awt.Color(254, 254, 254));
@@ -112,7 +113,7 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_administrar2.setText("Ventas");
         jmi_administrar2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jm_historial_ventas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jm_historial_ventas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
         jm_historial_ventas.setBackground(new java.awt.Color(48, 48, 48));
         jm_historial_ventas.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jm_historial_ventas.setForeground(new java.awt.Color(254, 254, 254));
@@ -120,7 +121,7 @@ public class ViewMain extends javax.swing.JFrame {
         jm_historial_ventas.setText("Historial");
         jmi_administrar2.add(jm_historial_ventas);
 
-        jm_caja.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        jm_caja.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, 0));
         jm_caja.setBackground(new java.awt.Color(48, 48, 48));
         jm_caja.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jm_caja.setForeground(new java.awt.Color(254, 254, 254));
@@ -136,7 +137,6 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_administrar3.setText("Almacen");
         jmi_administrar3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jm_empleados1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jm_empleados1.setBackground(new java.awt.Color(48, 48, 48));
         jm_empleados1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jm_empleados1.setForeground(new java.awt.Color(254, 254, 254));
@@ -151,12 +151,11 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_administrar4.setText("Reportes");
         jmi_administrar4.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jm_empleados2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jm_empleados2.setBackground(new java.awt.Color(48, 48, 48));
-        jm_empleados2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jm_empleados2.setForeground(new java.awt.Color(254, 254, 254));
-        jm_empleados2.setText("Generar");
-        jmi_administrar4.add(jm_empleados2);
+        jm_reportes.setBackground(new java.awt.Color(48, 48, 48));
+        jm_reportes.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_reportes.setForeground(new java.awt.Color(254, 254, 254));
+        jm_reportes.setText("Generar");
+        jmi_administrar4.add(jm_reportes);
 
         jMenuBar1.add(jmi_administrar4);
 
@@ -182,13 +181,13 @@ public class ViewMain extends javax.swing.JFrame {
         jm_proveedores.setText("Proveedores");
         jmi_administrar.add(jm_proveedores);
 
-        jm_proveedores1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
-        jm_proveedores1.setBackground(new java.awt.Color(48, 48, 48));
-        jm_proveedores1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jm_proveedores1.setForeground(new java.awt.Color(254, 254, 254));
-        jm_proveedores1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paquete.png"))); // NOI18N
-        jm_proveedores1.setText("Productos");
-        jmi_administrar.add(jm_proveedores1);
+        jm_productos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
+        jm_productos.setBackground(new java.awt.Color(48, 48, 48));
+        jm_productos.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_productos.setForeground(new java.awt.Color(254, 254, 254));
+        jm_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paquete.png"))); // NOI18N
+        jm_productos.setText("Productos");
+        jmi_administrar.add(jm_productos);
 
         jm_clientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
         jm_clientes.setBackground(new java.awt.Color(48, 48, 48));
@@ -198,6 +197,14 @@ public class ViewMain extends javax.swing.JFrame {
         jm_clientes.setText("Clientes");
         jmi_administrar.add(jm_clientes);
 
+        jm_sucursales.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
+        jm_sucursales.setBackground(new java.awt.Color(48, 48, 48));
+        jm_sucursales.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_sucursales.setForeground(new java.awt.Color(254, 254, 254));
+        jm_sucursales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/online-store.png"))); // NOI18N
+        jm_sucursales.setText("Sucursales");
+        jmi_administrar.add(jm_sucursales);
+
         jMenuBar1.add(jmi_administrar);
 
         setJMenuBar(jMenuBar1);
@@ -206,11 +213,11 @@ public class ViewMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1065, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
         );
 
         pack();
@@ -269,13 +276,14 @@ public class ViewMain extends javax.swing.JFrame {
     public javax.swing.JMenuItem jm_clientes;
     public javax.swing.JMenuItem jm_empleados;
     public javax.swing.JMenuItem jm_empleados1;
-    public javax.swing.JMenuItem jm_empleados2;
     public javax.swing.JMenuItem jm_historial_compras;
     public javax.swing.JMenuItem jm_historial_ventas;
+    public javax.swing.JMenuItem jm_productos;
     public javax.swing.JMenuItem jm_proveedores;
-    public javax.swing.JMenuItem jm_proveedores1;
     public javax.swing.JMenu jm_puntos;
     public javax.swing.JMenuItem jm_registrar_compra;
+    public javax.swing.JMenuItem jm_reportes;
+    public javax.swing.JMenuItem jm_sucursales;
     public javax.swing.JMenu jmi_administrar;
     public javax.swing.JMenu jmi_administrar1;
     public javax.swing.JMenu jmi_administrar2;

@@ -7,6 +7,8 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import models.ModelClientes;
 import views.ViewClientes;
 
@@ -21,6 +23,7 @@ public class ControllerClientes {
         this.modelClientes = modelClientes;
         this.viewClientes = viewClientes;
         setActionlistener();
+        setKeyListener();
         initDB();
         initComponents();
     }
@@ -93,6 +96,31 @@ public class ControllerClientes {
             }
         }
     };
+    
+    
+       public void setKeyListener(){
+        viewClientes.jtf_buscar.addKeyListener(keyListener);
+    }
+  
+    
+    KeyListener keyListener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+          
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            modelClientes.limpiaTabla();
+            modelClientes.buscarRegistro(viewClientes.jtf_buscar.getText());
+            modelClientes.tablaCliente();
+        }
+    };
 
     public void cancelarActionPerformed() {
         deshabilitarCampos();
@@ -106,17 +134,31 @@ public class ControllerClientes {
     }
 
     public void guardarActionPerformed() {
-       // enviarDatos();
+        // enviarDatos();
+        String item = viewClientes.jcb_tipo.getSelectedItem().toString();
+        System.err.println(item);
         if ("nuevo".equals(des)) {
-            modelClientes.guardarRegistro(viewClientes.jtf_nombre.getText(), viewClientes.jtf_ape_paterno.getText(),
-                    viewClientes.jtf_ape_materno.getText(), viewClientes.jtf_calle.getText(),
-                    viewClientes.jtf_numero.getText(), viewClientes.jtf_colonia.getText(), viewClientes.jtf_telefono.getText(),
-                    (String) viewClientes.jcb_tipo.getSelectedItem());
+            modelClientes.guardarRegistro(
+                    viewClientes.jtf_nombre.getText(),
+                    viewClientes.jtf_ape_paterno.getText(),
+                    viewClientes.jtf_ape_materno.getText(), 
+                    viewClientes.jtf_calle.getText(),
+                    viewClientes.jtf_numero.getText(),
+                    viewClientes.jtf_colonia.getText(),
+                    viewClientes.jtf_telefono.getText(),
+                    item);
 
         } else if ("actualizar".equals(des)) {
-            modelClientes.editarRegistro(viewClientes.jtf_nombre.getText(), viewClientes.jtf_ape_paterno.getText(), viewClientes.jtf_ape_materno.getText(),
-                    viewClientes.jtf_calle.getText(), viewClientes.jtf_numero.getText(), viewClientes.jtf_colonia.getText(), viewClientes.jtf_telefono.getText(),
-                    (String) viewClientes.jcb_tipo.getSelectedItem(), viewClientes.jtf_id_cliente.getText());
+            modelClientes.editarRegistro(
+                    viewClientes.jtf_nombre.getText(), 
+                    viewClientes.jtf_ape_paterno.getText(), 
+                    viewClientes.jtf_ape_materno.getText(),
+                    viewClientes.jtf_calle.getText(), 
+                    viewClientes.jtf_colonia.getText(), 
+                    viewClientes.jtf_numero.getText(),
+                    viewClientes.jtf_telefono.getText(),
+                    item,
+                    viewClientes.jtf_id_cliente.getText());
         }
         getValues();
         deshabilitarCampos();

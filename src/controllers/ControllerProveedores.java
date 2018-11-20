@@ -11,6 +11,8 @@ package controllers;
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import models.ModelProveedores;
 import views.ViewProveedores;
 
@@ -25,7 +27,7 @@ public class ControllerProveedores {
         this.viewProveedores = viewProveedores;
         setActionlistener();
         initComponents();
-    
+        setKeyListener();
         initDB();
     }
 
@@ -97,7 +99,33 @@ public class ControllerProveedores {
             }
         }
     };
+    
+    
+      public void setKeyListener(){
+        viewProveedores.jtf_buscar_empleado.addKeyListener(keyListener);
+    }
+    
+    
+    KeyListener keyListener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+          
+        }
 
+        @Override
+        public void keyPressed(KeyEvent e) {
+            
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+                modelProveedores.limpiaTabla();
+                modelProveedores.buscarRegistro(viewProveedores.jtf_buscar_empleado.getText());
+                modelProveedores.tablaProveedor();
+        }
+    };
+    
+    
     public void cancelarActionPerformed() {
         deshabilitarCampos();
         getValues();

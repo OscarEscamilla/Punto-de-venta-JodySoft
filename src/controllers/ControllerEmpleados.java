@@ -3,6 +3,8 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import models.ModelEmpleados;
 import views.ViewEmpleados;
 
@@ -21,7 +23,9 @@ public class ControllerEmpleados {
         this.viewEmpleados = viewEmpleados;
         setActionlistener();
         initDB();
+        setKeyListener();
         initComponents();
+        
 
     }
 
@@ -98,9 +102,32 @@ public class ControllerEmpleados {
             } else if (e.getSource() == viewEmpleados.jb_buscar){
                 
                 modelEmpleados.limpiaTabla();
-                modelEmpleados.buscarEmpleado(viewEmpleados.jtf_buscar_empleado.getText());
+                modelEmpleados.buscarEmpleado(viewEmpleados.jtf_buscar.getText());
                 modelEmpleados.tablaEmpleado();
             }
+        }
+    };
+    
+    public void setKeyListener(){
+        viewEmpleados.jtf_buscar.addKeyListener(keyListener);
+    }
+    
+    KeyListener keyListener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+          
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+           
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            modelEmpleados.limpiaTabla();
+            modelEmpleados.buscarEmpleado(viewEmpleados.jtf_buscar.getText());
+            modelEmpleados.tablaEmpleado(); 
         }
     };
 

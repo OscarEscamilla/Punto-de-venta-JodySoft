@@ -75,15 +75,19 @@ public class ModelCompras extends Conexion{
                 
                 conexion = getConexion();
                 
-                ps = conexion.prepareStatement("SELECT id_proveedor, nombre, empresa, telefono FROM proveedores WHERE id_proveedor LIKE '%"+ busqueda +"%';");
+                ps = conexion.prepareStatement("SELECT id_proveedor, nombre, empresa, telefono FROM proveedores WHERE id_proveedor"
+                + " LIKE '%"+ busqueda +"%';");
+             
                 rs = ps.executeQuery();
-                System.out.println("consulta compras proveedores");
+               
                 if(rs.next() == false){
-                JOptionPane.showMessageDialog(null,"No se encontraron coincidencias en su busqueda");
+                    JOptionPane.showMessageDialog(null,"No se encontraron coincidencias en su busqueda");
+                }else{
+                    
                 }
                 
-        } catch (SQLException ex) {
-            Logger.getLogger(ModelCompras.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "error- buscar" + e.getMessage());
         }
     }
 
@@ -132,4 +136,11 @@ public class ModelCompras extends Conexion{
         modelo_p.addColumn("Empresa");
        
     }
+    
+    
+//    public void buscarProducto(String bus){
+//        conexion = null;
+//        conexion = getConexion();
+//        ps = conexion.prepareStatement("SELECT nombre, ");
+//    }
 }

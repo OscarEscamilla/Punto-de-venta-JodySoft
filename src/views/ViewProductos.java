@@ -9,12 +9,12 @@ package views;
  *
  * @author oscar
  */
-public class ViewClientes extends javax.swing.JPanel {
+public class ViewProductos extends javax.swing.JPanel {
 
     /**
-     * Creates new form ViewClientes
+     * Creates new form ViewProductos
      */
-    public ViewClientes() {
+    public ViewProductos() {
         initComponents();
     }
 
@@ -27,49 +27,58 @@ public class ViewClientes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jb_buscar = new javax.swing.JButton();
+        jtf_buscar = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
-        jtf_colonia = new javax.swing.JTextField();
         jtf_ape_materno = new javax.swing.JTextField();
-        jtf_telefono = new javax.swing.JTextField();
         jb_reporte = new javax.swing.JButton();
         jtf_ape_paterno = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jb_actualizar = new javax.swing.JButton();
-        jtf_calle = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jtf_numero = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jb_guardar = new javax.swing.JButton();
         jtf_nombre = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jb_cancelar = new javax.swing.JButton();
-        jtf_id_cliente = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
+        jtf_id = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        jSeparator6 = new javax.swing.JSeparator();
-        jSeparator7 = new javax.swing.JSeparator();
-        jSeparator8 = new javax.swing.JSeparator();
-        jSeparator9 = new javax.swing.JSeparator();
-        jcb_tipo = new javax.swing.JComboBox<>();
         jb_eliminar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_clientes = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jtf_buscar = new javax.swing.JTextField();
-        jb_buscar = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(76, 175, 80));
-        setForeground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(46, 125, 50));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paquete.png"))); // NOI18N
+        jLabel8.setText("PRODUCTOS");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
+        jb_buscar.setContentAreaFilled(false);
+        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+        jPanel1.add(jtf_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
+
+        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel12.setText("Buscar");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 60));
 
         jPanel2.setBackground(new java.awt.Color(254, 254, 254));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,20 +91,10 @@ public class ViewClientes extends javax.swing.JPanel {
         jb_nuevo.setContentAreaFilled(false);
         jPanel2.add(jb_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, -1, -1));
 
-        jtf_colonia.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_colonia.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_colonia.setBorder(null);
-        jPanel2.add(jtf_colonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 229, 20));
-
         jtf_ape_materno.setBackground(new java.awt.Color(254, 254, 254));
         jtf_ape_materno.setForeground(new java.awt.Color(46, 125, 50));
         jtf_ape_materno.setBorder(null);
-        jPanel2.add(jtf_ape_materno, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 229, 20));
-
-        jtf_telefono.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_telefono.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_telefono.setBorder(null);
-        jPanel2.add(jtf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 229, 20));
+        jPanel2.add(jtf_ape_materno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 229, 20));
 
         jb_reporte.setBackground(new java.awt.Color(76, 175, 80));
         jb_reporte.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
@@ -109,12 +108,12 @@ public class ViewClientes extends javax.swing.JPanel {
         jtf_ape_paterno.setBackground(new java.awt.Color(254, 254, 254));
         jtf_ape_paterno.setForeground(new java.awt.Color(46, 125, 50));
         jtf_ape_paterno.setBorder(null);
-        jPanel2.add(jtf_ape_paterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 229, 20));
+        jPanel2.add(jtf_ape_paterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 229, 20));
 
         jLabel3.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel3.setText("Apellido Paterno");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 150, -1));
+        jLabel3.setText("Precio Compra");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 150, -1));
 
         jb_actualizar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_actualizar.setForeground(new java.awt.Color(46, 125, 50));
@@ -124,45 +123,20 @@ public class ViewClientes extends javax.swing.JPanel {
         jb_actualizar.setContentAreaFilled(false);
         jPanel2.add(jb_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 60, -1, -1));
 
-        jtf_calle.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_calle.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_calle.setBorder(null);
-        jPanel2.add(jtf_calle, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 229, 20));
-
-        jLabel6.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel6.setText("Colonia ");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 150, -1));
-
         jLabel4.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel4.setText("Telefono");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 150, -1));
-
-        jtf_numero.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_numero.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_numero.setBorder(null);
-        jPanel2.add(jtf_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 229, 20));
-
-        jLabel7.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel7.setText("Numero");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 150, -1));
+        jLabel4.setText("Descripcion");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 150, -1));
 
         jLabel2.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(46, 125, 50));
         jLabel2.setText("Nombre ");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 85, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 85, -1));
 
         jLabel10.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel10.setText("Apellido Materno");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 150, -1));
-
-        jLabel11.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel11.setText("Calle");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 150, -1));
+        jLabel10.setText("Precio Venta");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 150, -1));
 
         jb_guardar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_guardar.setForeground(new java.awt.Color(46, 125, 50));
@@ -180,12 +154,7 @@ public class ViewClientes extends javax.swing.JPanel {
                 jtf_nombreActionPerformed(evt);
             }
         });
-        jPanel2.add(jtf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 229, 20));
-
-        jLabel5.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel5.setText("Tipo");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 150, -1));
+        jPanel2.add(jtf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 229, 20));
 
         jb_cancelar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_cancelar.setForeground(new java.awt.Color(46, 125, 50));
@@ -195,68 +164,43 @@ public class ViewClientes extends javax.swing.JPanel {
         jb_cancelar.setContentAreaFilled(false);
         jPanel2.add(jb_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 180, -1, -1));
 
-        jtf_id_cliente.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_id_cliente.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_id_cliente.setBorder(null);
-        jtf_id_cliente.setCaretColor(new java.awt.Color(2, 119, 189));
-        jtf_id_cliente.setOpaque(false);
-        jPanel2.add(jtf_id_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 229, 20));
-
-        jSeparator1.setForeground(new java.awt.Color(46, 125, 50));
-        jSeparator1.setToolTipText("");
-        jSeparator1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 230, 20));
+        jtf_id.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_id.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_id.setBorder(null);
+        jtf_id.setCaretColor(new java.awt.Color(2, 119, 189));
+        jtf_id.setOpaque(false);
+        jPanel2.add(jtf_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 229, 20));
 
         jSeparator3.setForeground(new java.awt.Color(46, 125, 50));
         jSeparator3.setToolTipText("");
         jSeparator3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 230, 20));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 230, 20));
 
         jSeparator4.setForeground(new java.awt.Color(46, 125, 50));
         jSeparator4.setToolTipText("");
         jSeparator4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 230, 20));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 230, 20));
 
         jSeparator5.setForeground(new java.awt.Color(46, 125, 50));
         jSeparator5.setToolTipText("");
         jSeparator5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 230, 20));
-
-        jSeparator6.setForeground(new java.awt.Color(46, 125, 50));
-        jSeparator6.setToolTipText("");
-        jSeparator6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 230, 20));
-
-        jSeparator7.setForeground(new java.awt.Color(46, 125, 50));
-        jSeparator7.setToolTipText("");
-        jSeparator7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 230, 20));
-
-        jSeparator8.setForeground(new java.awt.Color(46, 125, 50));
-        jSeparator8.setToolTipText("");
-        jSeparator8.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 230, 20));
-
-        jSeparator9.setForeground(new java.awt.Color(46, 125, 50));
-        jSeparator9.setToolTipText("");
-        jSeparator9.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 230, 20));
-
-        jcb_tipo.setBackground(new java.awt.Color(254, 254, 254));
-        jcb_tipo.setForeground(new java.awt.Color(46, 125, 50));
-        jcb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Factura" }));
-        jcb_tipo.setOpaque(false);
-        jPanel2.add(jcb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 179, 230, 20));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 230, 20));
 
         jb_eliminar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_eliminar.setForeground(new java.awt.Color(46, 125, 50));
         jb_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/del.png"))); // NOI18N
-        jb_eliminar.setText("Elimiar");
+        jb_eliminar.setText("Eliminar");
         jb_eliminar.setBorderPainted(false);
         jb_eliminar.setContentAreaFilled(false);
         jPanel2.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 120, -1, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1210, 300));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 230, -1));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1230, 270));
 
         jtb_clientes.setAutoCreateRowSorter(true);
         jtb_clientes.setBackground(new java.awt.Color(254, 254, 254));
@@ -314,29 +258,7 @@ public class ViewClientes extends javax.swing.JPanel {
         jtb_clientes.setSelectionForeground(new java.awt.Color(254, 254, 254));
         jScrollPane1.setViewportView(jtb_clientes);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
-
-        jPanel1.setBackground(new java.awt.Color(46, 125, 50));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/red.png"))); // NOI18N
-        jLabel8.setText("CLIENTES");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
-        jPanel1.add(jtf_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
-
-        jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
-        jb_buscar.setContentAreaFilled(false);
-        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel12.setText("Buscar");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 60));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 1230, 180));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombreActionPerformed
@@ -346,26 +268,19 @@ public class ViewClientes extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTextArea jTextArea1;
     public javax.swing.JButton jb_actualizar;
     public javax.swing.JButton jb_buscar;
     public javax.swing.JButton jb_cancelar;
@@ -373,16 +288,11 @@ public class ViewClientes extends javax.swing.JPanel {
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JButton jb_reporte;
-    public javax.swing.JComboBox<String> jcb_tipo;
     public javax.swing.JTable jtb_clientes;
     public javax.swing.JTextField jtf_ape_materno;
     public javax.swing.JTextField jtf_ape_paterno;
     public javax.swing.JTextField jtf_buscar;
-    public javax.swing.JTextField jtf_calle;
-    public javax.swing.JTextField jtf_colonia;
-    public javax.swing.JTextField jtf_id_cliente;
+    public javax.swing.JTextField jtf_id;
     public javax.swing.JTextField jtf_nombre;
-    public javax.swing.JTextField jtf_numero;
-    public javax.swing.JTextField jtf_telefono;
     // End of variables declaration//GEN-END:variables
 }

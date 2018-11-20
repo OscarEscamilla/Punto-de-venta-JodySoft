@@ -4,6 +4,8 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import views.ViewCompras;
 import models.ModelCompras;
 
@@ -20,6 +22,7 @@ public class ControllerCompras {
         this.modelCompras = modelCompras;
         initComponents();
         setActionListener();
+        setKeyListener();
     }
     
     public void initComponents(){
@@ -37,18 +40,45 @@ public class ControllerCompras {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == viewCompras.jb_buscar){
-                actionPerformedProveedor();
+             
             }
         }
     };
     
+    public void setKeyListener(){
+        viewCompras.jtf_buscar.addKeyListener(keyListener);
+    }
     
-    public void actionPerformedProveedor(){
-        modelCompras.limpiaTablaProveedor();
-  
+    
+    KeyListener keyListener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+          
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+                modelCompras.limpiaTablaProveedor();
+                modelCompras.buscarProveedor(viewCompras.jtf_buscar.getText());
+                modelCompras.tablaProveedor();
+                viewCompras.jtb_proveedor.setModel(modelCompras.getModelo_p());
+        }
+    };
+    
+    
+    
+    public void actionPerformedProveedor(){    
+        
         modelCompras.buscarProveedor(viewCompras.jtf_buscar.getText());
         modelCompras.tablaProveedor();
         viewCompras.jtb_proveedor.setModel(modelCompras.getModelo_p());
     }
+    
+  
     
 }

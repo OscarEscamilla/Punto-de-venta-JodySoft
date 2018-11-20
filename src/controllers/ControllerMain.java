@@ -11,9 +11,6 @@ import javax.swing.JOptionPane;
 import models.ModelMain;
 import views.ViewMain;
 
-
-
-
 public class ControllerMain {
 
     private ViewMain viewMain;
@@ -22,15 +19,14 @@ public class ControllerMain {
     private final Object controllers[];
 
     private ControllerEmpleados controllerEmpleados;
-    //private ViewEmpleados viewEmpleados;
-
     private ControllerProveedores controllerProveedores;
-    //private ViewProveedores viewProveedores;
-
     private ControllerClientes controllerClientes;
-
     private ControllerCompras controllerCompras;
-    
+    private ControllerProductos controllerProductos;
+    private ControllerVentas controllerVentas;
+    private ControllerSucursales controllerSucursales;
+    private ControllerReportes controllerReportes;
+
     public ControllerMain(ModelMain modelMain, ViewMain viewMain, Object[] controllers) {
         this.modelMain = modelMain;
         this.viewMain = viewMain;
@@ -45,7 +41,10 @@ public class ControllerMain {
         controllerProveedores = (ControllerProveedores) controllers[1];
         controllerClientes = (ControllerClientes) controllers[2];
         controllerCompras = (ControllerCompras) controllers[3];
-
+        controllerVentas = (ControllerVentas) controllers[4];
+        controllerSucursales = (ControllerSucursales) controllers[5];
+        controllerProductos = (ControllerProductos) controllers[6];
+        controllerReportes = (ControllerReportes) controllers[7];
     }
 
     private void setActionListener() {
@@ -54,6 +53,10 @@ public class ControllerMain {
         viewMain.jm_proveedores.addActionListener(actionListener);
         viewMain.jm_clientes.addActionListener(actionListener);
         viewMain.jm_registrar_compra.addActionListener(actionListener);
+        viewMain.jm_caja.addActionListener(actionListener);
+        viewMain.jm_productos.addActionListener(actionListener);
+        viewMain.jm_sucursales.addActionListener(actionListener);
+        viewMain.jm_reportes.addActionListener(actionListener);
 
     }
 
@@ -72,9 +75,17 @@ public class ControllerMain {
                 salirActionPerformend();
             } else if (e.getSource() == viewMain.jm_clientes) {
                 clientesActionPerformed();
-            } else if (e.getSource() == viewMain.jm_registrar_compra){
+            } else if (e.getSource() == viewMain.jm_registrar_compra) {
                 comprasRegistrar();
-            }
+            } else if (e.getSource() == viewMain.jm_caja) {
+                cajaAction();
+            } else if (e.getSource() == viewMain.jm_productos) {
+                ProductosAction();
+            } else if (e.getSource() == viewMain.jm_sucursales) {
+                sucursalesActionPerformed();
+            } else if (e.getSource() == viewMain.jm_reportes) {
+                reportesActionPerformed();
+            } 
         }
     };
 
@@ -95,14 +106,40 @@ public class ControllerMain {
         viewMain.revalidate();
         viewMain.repaint();
     }
-    
-    public void comprasRegistrar(){
+
+    public void comprasRegistrar() {
         viewMain.setContentPane(controllerCompras.viewCompras);
         viewMain.revalidate();
         viewMain.repaint();
-        
-        
     }
+
+    public void ProductosAction() {
+        viewMain.setContentPane(controllerProductos.viewProductos);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+    public void cajaAction() {
+        viewMain.setContentPane(controllerVentas.viewVentas);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+    public void sucursalesActionPerformed(){
+        viewMain.setContentPane(controllerSucursales.viewSucursales);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+       public void reportesActionPerformed(){
+        viewMain.setContentPane(controllerReportes.viewReportes);
+        viewMain.revalidate();
+        viewMain.repaint();
+    }
+    
+    
+    
+    
 
     public void salirActionPerformend() {
 
