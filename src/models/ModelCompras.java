@@ -69,55 +69,89 @@ public class ModelCompras extends Conexion{
         this.modelo_p = modelo_p;
     }
     
-    public void buscarProveedor(String busqueda){
+    
+    public void actualizarProvedores() {
+        try {
+            
+            String sql = "SELECT  id_proveedor, nombre, empresa, telefono FROM proveedor;";
+            conexion = getConexion();
+            ps = conexion.prepareStatement(sql);
+            System.out.println(sql);
+            rs = ps.executeQuery(sql);
+            rs.next();
+            setValues();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error_Actualizar_tabla" + e.getMessage());
+        }
+
+    }
+     public void setValues() {
+        try {
+            id_proveedor = rs.getString("id_proveedor");
+            nombre_proveedor = rs.getString("nombre");
+            empresa = rs.getString("empresa");
+            telefono = rs.getString("telefono");
+           
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error model 102: " + e.getMessage());
+
+        }
+    }
+    
+    public void buscarProveedor(String nombre){
         try {
                 conexion = null; 
                 
                 conexion = getConexion();
                 
-                ps = conexion.prepareStatement("SELECT id_proveedor, nombre, empresa, telefono FROM proveedores WHERE id_proveedor"
-                + " LIKE '%"+ busqueda +"%';");
+                ps = conexion.prepareStatement("SELECT id_proveedor, nombre, empresa, telefono FROM proveedor WHERE nombre LIKE '%" + nombre + "%' OR id_proveedor LIKE '%"+ nombre +"%';");
              
                 rs = ps.executeQuery();
                
                 if(rs.next() == false){
                     JOptionPane.showMessageDialog(null,"No se encontraron coincidencias en su busqueda");
-                }else{
-                    
                 }
                 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "error- buscar" + e.getMessage());
         }
     }
-
-   
     
-     public void limpiaTablaProveedor() {
+    
+    public void limpiaTablaProveedor() {
         int filas = modelo_p.getRowCount();
         for (int i = 0; i < filas; i++) {
             modelo_p.removeRow(0);
         }
     }
-     
-      public void tablaProveedor() {
+    
+     public void añadirColumnasTabla() {
+
+        modelo_p.addColumn("Nombre");
+        modelo_p.addColumn("Empresa");
+        modelo_p.addColumn("Telefono");
+    
+
+    }
+    
+    
+    public void tablaProveedor() {
         try {
 
 //            rs.first();
-            String[] datos_p = new String[5];
-         
+            String[] datos_p = new String[3];
+            System.out.println("comenzando while");
             do {
-                datos_p[0] = rs.getString(1);
-                datos_p[1] = rs.getString(2);
-                datos_p[2] = rs.getString(3);
-                datos_p[3] = rs.getString(4);
-              
-               
+                datos_p[0] = rs.getString(2);
+                datos_p[1] = rs.getString(3);
+                datos_p[2] = rs.getString(4);
+            
 
                 modelo_p.addRow(datos_p);
-                
-                System.out.println(datos_p[0]);
-        
+
+                System.out.print(datos_p[0]);
             } while (rs.next());
 
         } catch (SQLException ex) {
@@ -126,21 +160,6 @@ public class ModelCompras extends Conexion{
             JOptionPane.showMessageDialog(null, "Error tabla " + ex.getMessage());
         }
     }
-      
     
-    public void añadirColumnasProveedor() {
-
-        modelo_p.addColumn("ID");
-        modelo_p.addColumn("Nombre");
-        modelo_p.addColumn("Telefono");
-        modelo_p.addColumn("Empresa");
-       
-    }
-    
-    
-//    public void buscarProducto(String bus){
-//        conexion = null;
-//        conexion = getConexion();
-//        ps = conexion.prepareStatement("SELECT nombre, ");
-//    }
+     
 }

@@ -59,12 +59,14 @@ public class ViewProveedores extends javax.swing.JPanel {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
-        jLabel8 = new javax.swing.JLabel();
         jtf_buscar_empleado = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jb_buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtb_proveedores = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jb_buscar1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jb_buscar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(76, 175, 80));
         setForeground(new java.awt.Color(76, 175, 80));
@@ -255,23 +257,12 @@ public class ViewProveedores extends javax.swing.JPanel {
         jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 230, 20));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1210, 300));
-
-        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/camion-de-reparto.png"))); // NOI18N
-        jLabel8.setText("PROVEEDORES");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, -1));
         add(jtf_buscar_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 229, 20));
 
         jLabel12.setFont(new java.awt.Font("AnjaliOldLipi", 1, 17)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(254, 254, 254));
         jLabel12.setText("Buscar");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 70, -1));
-
-        jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
-        jb_buscar.setContentAreaFilled(false);
-        add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
 
         jtb_proveedores.setAutoCreateRowSorter(true);
         jtb_proveedores.setBackground(new java.awt.Color(254, 254, 254));
@@ -330,6 +321,26 @@ public class ViewProveedores extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jtb_proveedores);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 1210, 180));
+
+        jPanel1.setBackground(new java.awt.Color(46, 125, 50));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_buscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
+        jb_buscar1.setContentAreaFilled(false);
+        jPanel1.add(jb_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        jLabel8.setBackground(new java.awt.Color(254, 254, 254));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/camion-de-reparto.png"))); // NOI18N
+        jLabel8.setText("PROVEEDORES");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 260, -1));
+
+        jb_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/magnifier-tool (1).png"))); // NOI18N
+        jb_buscar.setContentAreaFilled(false);
+        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_nombreActionPerformed
@@ -348,6 +359,7 @@ public class ViewProveedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -360,6 +372,7 @@ public class ViewProveedores extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JButton jb_actualizar;
     public javax.swing.JButton jb_buscar;
+    public javax.swing.JButton jb_buscar1;
     public javax.swing.JButton jb_cancelar;
     public javax.swing.JButton jb_eliminar;
     public javax.swing.JButton jb_guardar;

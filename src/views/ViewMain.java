@@ -41,6 +41,8 @@ public class ViewMain extends javax.swing.JFrame {
         jm_productos = new javax.swing.JMenuItem();
         jm_clientes = new javax.swing.JMenuItem();
         jm_sucursales = new javax.swing.JMenuItem();
+        jmi_administrar5 = new javax.swing.JMenu();
+        jm_reportes1 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -50,7 +52,7 @@ public class ViewMain extends javax.swing.JFrame {
         setBackground(new java.awt.Color(181, 50, 31));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(76, 175, 80));
+        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
         jPanel1.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/JODYSo (4).png"))); // NOI18N
@@ -207,6 +209,20 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuBar1.add(jmi_administrar);
 
+        jmi_administrar5.setBackground(new java.awt.Color(48, 48, 48));
+        jmi_administrar5.setForeground(new java.awt.Color(254, 254, 254));
+        jmi_administrar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/chat.png"))); // NOI18N
+        jmi_administrar5.setText("Chat");
+        jmi_administrar5.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+
+        jm_reportes1.setBackground(new java.awt.Color(48, 48, 48));
+        jm_reportes1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jm_reportes1.setForeground(new java.awt.Color(254, 254, 254));
+        jm_reportes1.setText("conectar");
+        jmi_administrar5.add(jm_reportes1);
+
+        jMenuBar1.add(jmi_administrar5);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,12 +299,14 @@ public class ViewMain extends javax.swing.JFrame {
     public javax.swing.JMenu jm_puntos;
     public javax.swing.JMenuItem jm_registrar_compra;
     public javax.swing.JMenuItem jm_reportes;
+    public javax.swing.JMenuItem jm_reportes1;
     public javax.swing.JMenuItem jm_sucursales;
     public javax.swing.JMenu jmi_administrar;
     public javax.swing.JMenu jmi_administrar1;
     public javax.swing.JMenu jmi_administrar2;
     public javax.swing.JMenu jmi_administrar3;
     public javax.swing.JMenu jmi_administrar4;
+    public javax.swing.JMenu jmi_administrar5;
     public javax.swing.JMenuItem jmi_salir;
     // End of variables declaration//GEN-END:variables
 }

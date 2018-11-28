@@ -2,10 +2,14 @@
 package controllers;
 
 
+import com.sun.media.sound.ModelOscillator;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import views.ViewCompras;
 import models.ModelCompras;
 
@@ -15,38 +19,47 @@ public class ControllerCompras {
     
     ViewCompras viewCompras;
     ModelCompras modelCompras;
+    
+    Calendar fecha = new GregorianCalendar();
 
     public ControllerCompras(ViewCompras viewCompras, ModelCompras modelCompras) {
         
         this.viewCompras = viewCompras;
         this.modelCompras = modelCompras;
-        initComponents();
         setActionListener();
+        initDB();
         setKeyListener();
+        initComponents();
     }
     
+      public void initDB() {
+        modelCompras.actualizarProvedores();
+      
+    }
     public void initComponents(){
-        viewCompras.jtf_subtotal.setText("0.0");
-        viewCompras.jtf_total.setText("0.0");
+        int ano = fecha.get(Calendar.YEAR);
+        int mes = fecha.get(Calendar.MONTH);
+        int dia = fecha.get(Calendar.DAY_OF_MONTH);
         
-          modelCompras.añadirColumnasProveedor();
+     viewCompras.jl_fecha.setText(dia+"-"+mes+"-"+ano);
+     
+        tablaProveedorActionPerformed();
     }
     
     public void setActionListener(){
-        viewCompras.jb_buscar.addActionListener(actionListener);
-    }
+           }
     
     ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(e.getSource() == viewCompras.jb_buscar){
+            if(e.getSource() == viewCompras.jb_buscar_proveedor){
              
             }
         }
     };
     
     public void setKeyListener(){
-        viewCompras.jtf_buscar.addKeyListener(keyListener);
+        viewCompras.jtf_buscar_proveedor.addKeyListener(keyListener);
     }
     
     
@@ -63,22 +76,24 @@ public class ControllerCompras {
 
         @Override
         public void keyReleased(KeyEvent e) {
-                modelCompras.limpiaTablaProveedor();
-                modelCompras.buscarProveedor(viewCompras.jtf_buscar.getText());
-                modelCompras.tablaProveedor();
-                viewCompras.jtb_proveedor.setModel(modelCompras.getModelo_p());
+             modelCompras.limpiaTablaProveedor();
+             modelCompras.buscarProveedor(viewCompras.jtf_buscar_proveedor.getText());
+             modelCompras.tablaProveedor();
         }
     };
     
-    
-    
-    public void actionPerformedProveedor(){    
+    public void tablaProveedorActionPerformed(){
+        //modelEmpleados.actualizarEmpleados();
         
-        modelCompras.buscarProveedor(viewCompras.jtf_buscar.getText());
-        modelCompras.tablaProveedor();
-        viewCompras.jtb_proveedor.setModel(modelCompras.getModelo_p());
+        modelCompras.añadirColumnasTabla();
+
+         modelCompras.tablaProveedor();
+         viewCompras.jtb_proveedor.setModel(modelCompras.getModelo_p());
+         
+        
     }
     
+  
   
     
 }

@@ -130,7 +130,7 @@ public class ModelProveedores extends Conexion{
 
     public void actualizarProveedores() {
         try {
-              String sql = "SELECT * FROM proveedores;";
+              String sql = "SELECT * FROM proveedor;";
               conexion = getConexion();
             ps = conexion.prepareStatement(sql);
             System.out.println(sql);
@@ -166,7 +166,7 @@ public class ModelProveedores extends Conexion{
         try {
             conexion = null;
             conexion = getConexion();
-            ps = conexion.prepareStatement("INSERT INTO proveedores (nombre, ape_paterno, ape_materno, calle, numero, colonia, telefono, empresa) VALUES (?,?,?,?,?,?,?,?)");
+            ps = conexion.prepareStatement("INSERT INTO proveedor (nombre, ape_paterno, ape_materno, calle, numero, colonia, telefono, empresa) VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, nombre);
             ps.setString(2, ape_paterno);
             ps.setString(3, ape_materno);
@@ -213,7 +213,7 @@ public class ModelProveedores extends Conexion{
         try {
             conexion = null;
             conexion = getConexion();
-            ps = conexion.prepareStatement("UPDATE proveedores SET nombre=?, ape_paterno=?, ape_materno=? , calle=? , numero=?, colonia=? , telefono= ?, empresa=? WHERE id_proveedor=?");
+            ps = conexion.prepareStatement("UPDATE proveedor  SET nombre=?, ape_paterno=?, ape_materno=? , calle=? , numero=?, colonia=? , telefono= ?, empresa=? WHERE id_proveedor=?");
             ps.setString(1, nombre);
             ps.setString(2, ape_paterno);
             ps.setString(3, ape_materno);

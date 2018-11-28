@@ -44,10 +44,10 @@ public class ViewReportes extends javax.swing.JPanel {
         jButton2.setForeground(new java.awt.Color(254, 254, 254));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/redes.png"))); // NOI18N
         jButton2.setText("Reporte de Empleados");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 5));
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 2));
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton2.setIconTextGap(10);
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 280, 90));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 520, 110));
 
         jPanel1.setBackground(new java.awt.Color(46, 125, 50));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,40 +70,40 @@ public class ViewReportes extends javax.swing.JPanel {
         jButton3.setForeground(new java.awt.Color(254, 254, 254));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paquete.png"))); // NOI18N
         jButton3.setText("Reporte de Productos");
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 5));
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 2));
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton3.setIconTextGap(10);
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 280, 90));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 560, 110));
 
         jButton4.setBackground(new java.awt.Color(46, 125, 50));
         jButton4.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(254, 254, 254));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/red.png"))); // NOI18N
         jButton4.setText("Reporte de Clientes");
-        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 5));
+        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 2));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton4.setIconTextGap(10);
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 280, 90));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 560, 110));
 
         jButton5.setBackground(new java.awt.Color(46, 125, 50));
         jButton5.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(254, 254, 254));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/online-store.png"))); // NOI18N
         jButton5.setText("Reporte de Sucursales");
-        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 5));
+        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 2));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton5.setIconTextGap(10);
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 280, 90));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 560, 110));
 
         jButton6.setBackground(new java.awt.Color(46, 125, 50));
         jButton6.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(254, 254, 254));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/camion-de-reparto.png"))); // NOI18N
         jButton6.setText("Reporte de Proveedores");
-        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 5));
+        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254), 2));
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton6.setIconTextGap(10);
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 280, 90));
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 520, 110));
     }// </editor-fold>//GEN-END:initComponents
 
 
