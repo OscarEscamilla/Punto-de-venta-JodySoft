@@ -232,8 +232,8 @@ public class ModelClientes extends Conexion {
         modelo.addColumn("Apellido Paterno");
         modelo.addColumn("Apellido Materno");
         modelo.addColumn("Calle");
-        modelo.addColumn("Numero");
         modelo.addColumn("Colonia");
+        modelo.addColumn("Numero");
         modelo.addColumn("Tipo");
         modelo.addColumn("Telefono");
 

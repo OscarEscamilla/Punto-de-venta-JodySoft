@@ -13,6 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelProveedores;
 import views.ViewProveedores;
 
@@ -26,6 +28,7 @@ public class ControllerProveedores {
         this.modelProveedores = modelProveedores;
         this.viewProveedores = viewProveedores;
         setActionlistener();
+        setMouseListener();
         initComponents();
         setKeyListener();
         initDB();
@@ -100,6 +103,32 @@ public class ControllerProveedores {
         }
     };
     
+    public void setMouseListener(){
+        viewProveedores.jtb_proveedores.addMouseListener(mouseListener);
+    }
+    
+    MouseListener mouseListener = new MouseListener() {
+        
+        
+        public void mouseClicked(MouseEvent e) {
+           int fila = viewProveedores.jtb_proveedores.getSelectedRow();
+           viewProveedores.jtf_id_proveedor.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 0));
+           viewProveedores.jtf_nombre.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 1));
+           viewProveedores.jtf_app_proveedor.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 2));
+           viewProveedores.jtf_apm_proveedor.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 3));
+           viewProveedores.jtf_empresa.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 4));
+           viewProveedores.jtf_calle.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 5));
+           viewProveedores.jtf_colonia.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 6));
+           viewProveedores.jtf_numero.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 7));
+           viewProveedores.jtf_telefono.setText((String) viewProveedores.jtb_proveedores.getValueAt(fila, 8));
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {}
+        public void mouseReleased(MouseEvent e) {}
+        public void mouseEntered(MouseEvent e) {}
+        public void mouseExited(MouseEvent e) {}
+    };
     
       public void setKeyListener(){
         viewProveedores.jtf_buscar_empleado.addKeyListener(keyListener);

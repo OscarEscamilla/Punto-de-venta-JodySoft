@@ -13,6 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelSucursales;
 import views.ViewSucursales;
 
@@ -26,6 +28,7 @@ public class ControllerSucursales {
         this.modelSucursales = modelSucursales;
         this.viewSucursales = viewSucursales;
         setActionlistener();
+        setMouseListener();
         setKeyListener();
         initDB();
         initComponents();
@@ -86,7 +89,33 @@ public class ControllerSucursales {
             }
         }
     };
-
+    
+    public void setMouseListener(){
+        viewSucursales.jtb_sucursales.addMouseListener(mouseListener);
+    }
+    
+    MouseListener mouseListener = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int fila = viewSucursales.jtb_sucursales.getSelectedRow();
+            
+            viewSucursales.jtf_id.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 0));
+            viewSucursales.jtf_nombre.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 1));
+            viewSucursales.jtf_calle.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 2));
+            viewSucursales.jtf_colonia.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 3));
+            viewSucursales.jtf_numero.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 4));
+            viewSucursales.jtf_telefono.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 5));
+            viewSucursales.jtf_codigo_p.setText((String) viewSucursales.jtb_sucursales.getValueAt(fila, 6));
+            
+             
+        
+        }
+        public void mousePressed(MouseEvent e) {}
+        public void mouseReleased(MouseEvent e) { }
+        public void mouseEntered(MouseEvent e) {}
+        public void mouseExited(MouseEvent e) { }
+    };
+    
     public void setKeyListener() {
         viewSucursales.jtf_buscar.addKeyListener(keyListener);
     }
@@ -126,22 +155,22 @@ public class ControllerSucursales {
         
         if ("nuevo".equals(des)) {
             modelSucursales.guardarRegistro(
-                    viewSucursales.jtf_nombre.getText(),
-                    viewSucursales.jtf_calle.getText(),
-                    viewSucursales.jtf_colonia.getText(),
-                    viewSucursales.jtf_telefono.getText(),
-                    viewSucursales.jtf_numero.getText(),
-                    viewSucursales.jtf_codigo_p.getText());
+                viewSucursales.jtf_nombre.getText(),
+                viewSucursales.jtf_calle.getText(),
+                viewSucursales.jtf_colonia.getText(),
+                viewSucursales.jtf_telefono.getText(),
+                viewSucursales.jtf_numero.getText(),
+                viewSucursales.jtf_codigo_p.getText());
 
         } else if ("actualizar".equals(des)) {
             modelSucursales.editarRegistro(
-                    viewSucursales.jtf_nombre.getText(),
-                    viewSucursales.jtf_calle.getText(),
-                    viewSucursales.jtf_colonia.getText(), 
-                    viewSucursales.jtf_telefono.getText(),
-                    viewSucursales.jtf_numero.getText(),
-                    viewSucursales.jtf_codigo_p.getText(),
-                    viewSucursales.jtf_id.getText());
+                viewSucursales.jtf_nombre.getText(),
+                viewSucursales.jtf_calle.getText(),
+                viewSucursales.jtf_colonia.getText(), 
+                viewSucursales.jtf_telefono.getText(),
+                viewSucursales.jtf_numero.getText(),
+                viewSucursales.jtf_codigo_p.getText(),
+                viewSucursales.jtf_id.getText());
         }
         getValues();
         deshabilitarCampos();

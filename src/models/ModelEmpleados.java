@@ -169,15 +169,15 @@ public class ModelEmpleados extends Conexion{
         try {
             conexion = null;
             conexion = getConexion();
-            ps = conexion.prepareStatement("INSERT INTO empleados (nombre, ape_paterno, ape_materno, calle, numero, colonia, telefono, rfc) VALUES (?,?,?,?,?,?,?,?)");
+            ps = conexion.prepareStatement("INSERT INTO empleados (nombre, ape_paterno, ape_materno, calle, colonia, numero, rfc, telefono) VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, nombre);
             ps.setString(2, ape_paterno);
             ps.setString(3, ape_materno);
             ps.setString(4, calle);
-            ps.setString(5, numero);
-            ps.setString(6, colonia);
-            ps.setString(7, telefono);
-            ps.setString(8, RFC);
+            ps.setString(5, colonia);
+            ps.setString(6, numero);
+            ps.setString(7, RFC);
+            ps.setString(8, telefono);
             int devuelto = ps.executeUpdate();
             if (devuelto > 0) {
                 JOptionPane.showMessageDialog(null, "Datos guardados...");
@@ -245,10 +245,10 @@ public class ModelEmpleados extends Conexion{
         modelo.addColumn("Apellido Paterno");
         modelo.addColumn("Apellido Materno");
         modelo.addColumn("Calle");
-        modelo.addColumn("Numero");
         modelo.addColumn("Colonia");
-        modelo.addColumn("Telefono");
-        modelo.addColumn("rfc");
+        modelo.addColumn("Numero");
+        modelo.addColumn("RFC");
+        modelo.addColumn("telefono");
 
     }
 

@@ -26,7 +26,7 @@ import controllers.ControllerCompras;
 import views.ViewCompras;
 
 import models.ModelVentas;
-import  controllers.ControllerVentas;
+import controllers.ControllerVentas;
 import views.ViewVentas;
 
 import models.ModelProductos;
@@ -41,10 +41,9 @@ import models.ModelReportes;
 import controllers.ControllerReportes;
 import views.ViewReportes;
 
-
-
-
-
+import models.ModelLogin;
+import controllers.ControllerLogin;
+import views.ViewLogin;
 
 public class Main {
 
@@ -52,74 +51,71 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        
-        
-        ModelEmpleados modelEmpleados = new ModelEmpleados();
-        ViewEmpleados viewEmpleados = new ViewEmpleados();
-        ControllerEmpleados controllerEmpleados = new ControllerEmpleados(modelEmpleados, viewEmpleados);
-        
-        
-        ModelProveedores modelProveedores = new ModelProveedores();
-        ViewProveedores viewProveedores = new ViewProveedores();
-        ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
-        
-        
-        ModelClientes modelClientes = new ModelClientes();
-        ViewClientes viewClientes = new ViewClientes();
-        ControllerClientes controllerClientes = new ControllerClientes(modelClientes, viewClientes);
-        
-        ModelCompras modelCompras = new ModelCompras();
-        ViewCompras viewCompras = new ViewCompras();
-        ControllerCompras controllerCompras = new ControllerCompras(viewCompras, modelCompras);
-        
-        
-        
-        ModelSucursales modelSucursales = new ModelSucursales();
-        ViewSucursales viewSucursales = new  ViewSucursales();
-        ControllerSucursales controllerSucursales = new ControllerSucursales(modelSucursales, viewSucursales);
-        
-        ModelVentas modelVentas = new ModelVentas();
-        ViewVentas viewVentas = new ViewVentas();
-        ControllerVentas controllerVentas = new ControllerVentas(modelVentas, viewVentas);
-        
-        
-        ModelReportes modelReportes = new ModelReportes();
-        ViewReportes viewReportes = new ViewReportes();
-        ControllerReportes controllerReportes = new ControllerReportes(viewReportes, modelReportes);
-        
-        ModelProductos modelProductos = new ModelProductos();
-        ViewProductos viewProductos = new ViewProductos();
-        ControllerProductos controllerProductos = new ControllerProductos(modelProductos, viewProductos);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        Object[] controllers = new Object[8];
-        controllers[0] = controllerEmpleados;
-        controllers[1] = controllerProveedores;
-        controllers[2] = controllerClientes;
-        controllers[3] = controllerCompras;
-        controllers[4] = controllerVentas;
-        controllers[5] = controllerSucursales;
-        controllers[6] = controllerProductos;
-        controllers[7] = controllerReportes;
-        
-        
-        
-        ModelMain modelMain = new ModelMain();
-        ViewMain viewMain = new ViewMain();
-        ControllerMain controllerMain = new ControllerMain(modelMain, viewMain, controllers);
-        
+
+        ModelLogin modelLogin = new ModelLogin();
+        ViewLogin viewLogin = new ViewLogin();
+        ControllerLogin controllerLogin = new ControllerLogin(modelLogin, viewLogin);
+
+        System.out.println(modelLogin.isValue());
+        while (true) {
+            System.out.println("Running");
+            if (modelLogin.isValue() == true) {
+                System.out.println(modelLogin.isValue());
+
+                //########################################################
+                ModelEmpleados modelEmpleados = new ModelEmpleados();
+                ViewEmpleados viewEmpleados = new ViewEmpleados();
+                ControllerEmpleados controllerEmpleados = new ControllerEmpleados(modelEmpleados, viewEmpleados);
+
+                ModelProveedores modelProveedores = new ModelProveedores();
+                ViewProveedores viewProveedores = new ViewProveedores();
+                ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
+
+                ModelClientes modelClientes = new ModelClientes();
+                ViewClientes viewClientes = new ViewClientes();
+                ControllerClientes controllerClientes = new ControllerClientes(modelClientes, viewClientes);
+
+                ModelCompras modelCompras = new ModelCompras();
+                ViewCompras viewCompras = new ViewCompras();
+                ControllerCompras controllerCompras = new ControllerCompras(viewCompras, modelCompras);
+
+                ModelSucursales modelSucursales = new ModelSucursales();
+                ViewSucursales viewSucursales = new ViewSucursales();
+                ControllerSucursales controllerSucursales = new ControllerSucursales(modelSucursales, viewSucursales);
+
+                ModelVentas modelVentas = new ModelVentas();
+                ViewVentas viewVentas = new ViewVentas();
+                ControllerVentas controllerVentas = new ControllerVentas(modelVentas, viewVentas);
+
+                ModelReportes modelReportes = new ModelReportes();
+                ViewReportes viewReportes = new ViewReportes();
+                ControllerReportes controllerReportes = new ControllerReportes(viewReportes, modelReportes);
+
+                ModelProductos modelProductos = new ModelProductos();
+                ViewProductos viewProductos = new ViewProductos();
+                ControllerProductos controllerProductos = new ControllerProductos(modelProductos, viewProductos);
+
+                Object[] controllers = new Object[8];
+                controllers[0] = controllerEmpleados;
+                controllers[1] = controllerProveedores;
+                controllers[2] = controllerClientes;
+                controllers[3] = controllerCompras;
+                controllers[4] = controllerVentas;
+                controllers[5] = controllerSucursales;
+                controllers[6] = controllerProductos;
+                controllers[7] = controllerReportes;
+
+                ModelMain modelMain = new ModelMain();
+                ViewMain viewMain = new ViewMain();
+                ControllerMain controllerMain = new ControllerMain(modelMain, viewMain, controllers);
+
+                //########################################################3
+                viewLogin.dispose();
+                System.out.println("Hola");
+                break;
+            }
+        }
+
     }
-    
+
 }

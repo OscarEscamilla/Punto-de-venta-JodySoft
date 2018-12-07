@@ -34,9 +34,9 @@ public class ViewProductos extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jb_nuevo = new javax.swing.JButton();
-        jtf_ape_materno = new javax.swing.JTextField();
+        jtf_pventa = new javax.swing.JTextField();
         jb_reporte = new javax.swing.JButton();
-        jtf_ape_paterno = new javax.swing.JTextField();
+        jtf_pcompra = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jb_actualizar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -51,9 +51,11 @@ public class ViewProductos extends javax.swing.JPanel {
         jSeparator5 = new javax.swing.JSeparator();
         jb_eliminar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtf_descripcion = new javax.swing.JTextArea();
+        jcb_categoria = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtb_clientes = new javax.swing.JTable();
+        jtb_productos = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,10 +93,10 @@ public class ViewProductos extends javax.swing.JPanel {
         jb_nuevo.setContentAreaFilled(false);
         jPanel2.add(jb_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, -1, -1));
 
-        jtf_ape_materno.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_ape_materno.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_ape_materno.setBorder(null);
-        jPanel2.add(jtf_ape_materno, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 229, 20));
+        jtf_pventa.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_pventa.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_pventa.setBorder(null);
+        jPanel2.add(jtf_pventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 229, 20));
 
         jb_reporte.setBackground(new java.awt.Color(76, 175, 80));
         jb_reporte.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
@@ -105,15 +107,15 @@ public class ViewProductos extends javax.swing.JPanel {
         jb_reporte.setContentAreaFilled(false);
         jPanel2.add(jb_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, -1));
 
-        jtf_ape_paterno.setBackground(new java.awt.Color(254, 254, 254));
-        jtf_ape_paterno.setForeground(new java.awt.Color(46, 125, 50));
-        jtf_ape_paterno.setBorder(null);
-        jPanel2.add(jtf_ape_paterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 229, 20));
+        jtf_pcompra.setBackground(new java.awt.Color(254, 254, 254));
+        jtf_pcompra.setForeground(new java.awt.Color(46, 125, 50));
+        jtf_pcompra.setBorder(null);
+        jPanel2.add(jtf_pcompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 229, 20));
 
         jLabel3.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel3.setText("Precio Compra");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 150, -1));
+        jLabel3.setText("Categoria");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 150, -1));
 
         jb_actualizar.setFont(new java.awt.Font("AnjaliOldLipi", 1, 15)); // NOI18N
         jb_actualizar.setForeground(new java.awt.Color(46, 125, 50));
@@ -194,54 +196,62 @@ public class ViewProductos extends javax.swing.JPanel {
         jb_eliminar.setContentAreaFilled(false);
         jPanel2.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 120, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jtf_descripcion.setColumns(20);
+        jtf_descripcion.setRows(5);
+        jScrollPane2.setViewportView(jtf_descripcion);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 230, -1));
 
+        jcb_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Herramienta", "Maquinaria" }));
+        jPanel2.add(jcb_categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 230, 20));
+
+        jLabel5.setFont(new java.awt.Font("Loma", 1, 17)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(46, 125, 50));
+        jLabel5.setText("Precio Compra");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 150, -1));
+
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 1230, 270));
 
-        jtb_clientes.setAutoCreateRowSorter(true);
-        jtb_clientes.setBackground(new java.awt.Color(254, 254, 254));
-        jtb_clientes.setBorder(null);
-        jtb_clientes.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
-        jtb_clientes.setForeground(new java.awt.Color(1, 1, 1));
-        jtb_clientes.setModel(new javax.swing.table.DefaultTableModel(
+        jtb_productos.setAutoCreateRowSorter(true);
+        jtb_productos.setBackground(new java.awt.Color(254, 254, 254));
+        jtb_productos.setBorder(null);
+        jtb_productos.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
+        jtb_productos.setForeground(new java.awt.Color(1, 1, 1));
+        jtb_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Apellido  Paterno", "Apellido Materno", "Calle", "Numero", "Colonia ", "Telefono"
+                "ID", "Producto", "Precion de Compra", "Precio de Venta", "Descripcion", "Categoria "
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -252,11 +262,11 @@ public class ViewProductos extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jtb_clientes.setGridColor(new java.awt.Color(46, 125, 50));
-        jtb_clientes.setOpaque(false);
-        jtb_clientes.setSelectionBackground(new java.awt.Color(46, 125, 50));
-        jtb_clientes.setSelectionForeground(new java.awt.Color(254, 254, 254));
-        jScrollPane1.setViewportView(jtb_clientes);
+        jtb_productos.setGridColor(new java.awt.Color(46, 125, 50));
+        jtb_productos.setOpaque(false);
+        jtb_productos.setSelectionBackground(new java.awt.Color(46, 125, 50));
+        jtb_productos.setSelectionForeground(new java.awt.Color(254, 254, 254));
+        jScrollPane1.setViewportView(jtb_productos);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 1230, 180));
     }// </editor-fold>//GEN-END:initComponents
@@ -272,6 +282,7 @@ public class ViewProductos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
@@ -280,7 +291,6 @@ public class ViewProductos extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextArea jTextArea1;
     public javax.swing.JButton jb_actualizar;
     public javax.swing.JButton jb_buscar;
     public javax.swing.JButton jb_cancelar;
@@ -288,11 +298,13 @@ public class ViewProductos extends javax.swing.JPanel {
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_nuevo;
     public javax.swing.JButton jb_reporte;
-    public javax.swing.JTable jtb_clientes;
-    public javax.swing.JTextField jtf_ape_materno;
-    public javax.swing.JTextField jtf_ape_paterno;
+    public javax.swing.JComboBox<String> jcb_categoria;
+    public javax.swing.JTable jtb_productos;
     public javax.swing.JTextField jtf_buscar;
+    public javax.swing.JTextArea jtf_descripcion;
     public javax.swing.JTextField jtf_id;
     public javax.swing.JTextField jtf_nombre;
+    public javax.swing.JTextField jtf_pcompra;
+    public javax.swing.JTextField jtf_pventa;
     // End of variables declaration//GEN-END:variables
 }

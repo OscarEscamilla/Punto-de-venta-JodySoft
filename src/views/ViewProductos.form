@@ -148,7 +148,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_ape_materno">
+        <Component class="javax.swing.JTextField" name="jtf_pventa">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="fe" green="fe" red="fe" type="rgb"/>
@@ -196,7 +196,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtf_ape_paterno">
+        <Component class="javax.swing.JTextField" name="jtf_pcompra">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="fe" green="fe" red="fe" type="rgb"/>
@@ -225,11 +225,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="32" green="7d" red="2e" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Precio Compra"/>
+            <Property name="text" type="java.lang.String" value="Categoria"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="60" y="120" width="150" height="-1"/>
+              <AbsoluteConstraints x="60" y="160" width="150" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -492,14 +492,53 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="jtf_descripcion">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JComboBox" name="jcb_categoria">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="General"/>
+                <StringItem index="1" value="Herramienta"/>
+                <StringItem index="2" value="Maquinaria"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="210" y="160" width="230" height="20"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Loma" size="17" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="7d" red="2e" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Precio Compra"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="60" y="120" width="150" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -514,7 +553,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jtb_clientes">
+        <Component class="javax.swing.JTable" name="jtb_productos">
           <Properties>
             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -530,14 +569,13 @@
               <Color blue="1" green="1" red="1" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="23">
-                <Column editable="false" title="Nombre" type="java.lang.String"/>
-                <Column editable="false" title="Apellido  Paterno" type="java.lang.String"/>
-                <Column editable="false" title="Apellido Materno" type="java.lang.String"/>
-                <Column editable="false" title="Calle" type="java.lang.String"/>
-                <Column editable="false" title="Numero" type="java.lang.String"/>
-                <Column editable="false" title="Colonia " type="java.lang.String"/>
-                <Column editable="true" title="Telefono" type="java.lang.String"/>
+              <Table columnCount="6" rowCount="23">
+                <Column editable="false" title="ID" type="java.lang.String"/>
+                <Column editable="false" title="Producto" type="java.lang.String"/>
+                <Column editable="false" title="Precion de Compra" type="java.lang.String"/>
+                <Column editable="false" title="Precio de Venta" type="java.lang.String"/>
+                <Column editable="false" title="Descripcion" type="java.lang.String"/>
+                <Column editable="false" title="Categoria " type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

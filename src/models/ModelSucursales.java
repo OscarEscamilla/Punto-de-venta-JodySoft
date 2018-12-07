@@ -215,8 +215,8 @@ public class ModelSucursales extends Conexion {
         modelo.addColumn("Nombre");
         modelo.addColumn("Calle");
         modelo.addColumn("Colonia");
-        modelo.addColumn("Telefono");
         modelo.addColumn("Numero Exterior");
+        modelo.addColumn("Telefono");
         modelo.addColumn("Codigo Postal");
        
 

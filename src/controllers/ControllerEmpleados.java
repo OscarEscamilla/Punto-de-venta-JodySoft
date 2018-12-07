@@ -1,10 +1,11 @@
-
 package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelEmpleados;
 import views.ViewEmpleados;
 
@@ -22,10 +23,10 @@ public class ControllerEmpleados {
         this.modelEmpleados = modelEmpleados;
         this.viewEmpleados = viewEmpleados;
         setActionlistener();
+        setMouseListener();
         initDB();
         setKeyListener();
         initComponents();
-        
 
     }
 
@@ -43,7 +44,7 @@ public class ControllerEmpleados {
         viewEmpleados.jb_cancelar.setEnabled(false);
         viewEmpleados.jb_guardar.setEnabled(false);
         viewEmpleados.jtf_id_empleado.setVisible(false);
-        
+
         tablaEmpleadosActionPerformed();
 
     }
@@ -52,13 +53,6 @@ public class ControllerEmpleados {
         modelEmpleados.actualizarEmpleados();
         getValues();
     }
-    
-
-   
-    
-    
-    
- 
 
     public void setActionlistener() {
         viewEmpleados.jb_actualizar.addActionListener(actionListener);
@@ -99,35 +93,67 @@ public class ControllerEmpleados {
             } else if (e.getSource() == viewEmpleados.jb_reporte) {
 
                 reporteActionPerformed();
-            } else if (e.getSource() == viewEmpleados.jb_buscar){
-                
+            } else if (e.getSource() == viewEmpleados.jb_buscar) {
+
                 modelEmpleados.limpiaTabla();
                 modelEmpleados.buscarEmpleado(viewEmpleados.jtf_buscar.getText());
                 modelEmpleados.tablaEmpleado();
             }
         }
     };
-    
-    public void setKeyListener(){
+
+    public void setMouseListener() {
+        viewEmpleados.jtb_empleados.addMouseListener(mouseListener);
+    }
+
+    MouseListener mouseListener = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int filaseleccionada = viewEmpleados.jtb_empleados.getSelectedRow();
+            viewEmpleados.jtf_id_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 0));
+            viewEmpleados.jtf_nombre_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 1));
+            viewEmpleados.jtf_app_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 2));
+            viewEmpleados.jtf_apm_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 3));
+            viewEmpleados.jtf_calle_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 4));
+            viewEmpleados.jtf_colonia_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 5));
+            viewEmpleados.jtf_numero_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 6));
+            viewEmpleados.jtf_rfc_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 7));
+            viewEmpleados.jtf_telefono_empleado.setText((String) viewEmpleados.jtb_empleados.getValueAt(filaseleccionada, 8));
+        }
+
+        public void mousePressed(MouseEvent e) {
+        }
+
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        public void mouseExited(MouseEvent e) {
+        }
+    };
+
+    public void setKeyListener() {
         viewEmpleados.jtf_buscar.addKeyListener(keyListener);
     }
-    
+
     KeyListener keyListener = new KeyListener() {
         @Override
         public void keyTyped(KeyEvent e) {
-          
+
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-           
+
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             modelEmpleados.limpiaTabla();
             modelEmpleados.buscarEmpleado(viewEmpleados.jtf_buscar.getText());
-            modelEmpleados.tablaEmpleado(); 
+            modelEmpleados.tablaEmpleado();
         }
     };
 
@@ -146,16 +172,16 @@ public class ControllerEmpleados {
     public void guardarActionPerformed() {
         enviarDatos();
         if ("nuevo".equals(des)) {
-            modelEmpleados.guardarRegistro(viewEmpleados.jtf_nombre_empleado.getText(),viewEmpleados.jtf_app_empleado.getText(),
+            modelEmpleados.guardarRegistro(viewEmpleados.jtf_nombre_empleado.getText(), viewEmpleados.jtf_app_empleado.getText(),
                     viewEmpleados.jtf_apm_empleado.getText(), viewEmpleados.jtf_calle_empleado.getText(),
-                    viewEmpleados.jtf_numero_empleado.getText(), viewEmpleados.jtf_colonia_empleado.getText(), viewEmpleados.jtf_telefono_empleado.getText()
-                    ,viewEmpleados.jtf_rfc_empleado.getText());
+                    viewEmpleados.jtf_numero_empleado.getText(), viewEmpleados.jtf_colonia_empleado.getText(), viewEmpleados.jtf_telefono_empleado.getText(),
+                     viewEmpleados.jtf_rfc_empleado.getText());
 
         } else if ("actualizar".equals(des)) {
-            modelEmpleados.editarRegistro(viewEmpleados.jtf_nombre_empleado.getText(),viewEmpleados.jtf_app_empleado.getText(),
+            modelEmpleados.editarRegistro(viewEmpleados.jtf_nombre_empleado.getText(), viewEmpleados.jtf_app_empleado.getText(),
                     viewEmpleados.jtf_apm_empleado.getText(), viewEmpleados.jtf_calle_empleado.getText(),
-                    viewEmpleados.jtf_numero_empleado.getText(), viewEmpleados.jtf_colonia_empleado.getText(), viewEmpleados.jtf_telefono_empleado.getText()
-                    ,viewEmpleados.jtf_rfc_empleado.getText(),viewEmpleados.jtf_id_empleado.getText());
+                    viewEmpleados.jtf_numero_empleado.getText(), viewEmpleados.jtf_colonia_empleado.getText(), viewEmpleados.jtf_telefono_empleado.getText(),
+                     viewEmpleados.jtf_rfc_empleado.getText(), viewEmpleados.jtf_id_empleado.getText());
         }
         getValues();
         deshabilitarCampos();
@@ -165,27 +191,27 @@ public class ControllerEmpleados {
         viewEmpleados.jb_nuevo.setEnabled(true);
         viewEmpleados.jb_cancelar.setEnabled(false);
         viewEmpleados.jb_guardar.setEnabled(false);
-        
-        
+
         modelEmpleados.limpiaTabla();
         modelEmpleados.actualizarEmpleados();
         modelEmpleados.tablaEmpleado();
 
-
     }
+    
+    //aqui me quede para seguir haceindo controller productos
 
     public void nuevoActionPerformed() {
         des = "nuevo";
         habilitarCampos();
         limpiarCampos();
+
         viewEmpleados.jb_actualizar.setEnabled(false);
         viewEmpleados.jb_eliminar.setEnabled(false);
         viewEmpleados.jb_reporte.setEnabled(false);
         viewEmpleados.jb_nuevo.setEnabled(false);
         viewEmpleados.jb_cancelar.setEnabled(true);
         viewEmpleados.jb_guardar.setEnabled(true);
-        
-        
+
     }
 
     public void eliminarActionPerformed() {
@@ -193,19 +219,17 @@ public class ControllerEmpleados {
         modelEmpleados.eliminarRegistro(viewEmpleados.jtf_id_empleado.getText());
         modelEmpleados.actualizarEmpleados();
         getValues();
-        
 
     }
-    
-    public void tablaEmpleadosActionPerformed(){
+
+    public void tablaEmpleadosActionPerformed() {
         //modelEmpleados.actualizarEmpleados();
-        
+
         modelEmpleados.añadirColumnasTabla();
 
-         modelEmpleados.tablaEmpleado();
-         viewEmpleados.jtb_empleados.setModel(modelEmpleados.getModelo());
-         
-        
+        modelEmpleados.tablaEmpleado();
+        viewEmpleados.jtb_empleados.setModel(modelEmpleados.getModelo());
+
     }
 
     public void actualizarActionPerformed() {
@@ -282,8 +306,5 @@ public class ControllerEmpleados {
         viewEmpleados.jtf_telefono_empleado.setEditable(false);
         viewEmpleados.jtf_rfc_empleado.setEditable(false);
     }
-        
-  
-
 
 }

@@ -241,11 +241,11 @@ public class ModelProveedores extends Conexion{
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido Paterno");
         modelo.addColumn("Apellido Materno");
-        modelo.addColumn("Calle");
-        modelo.addColumn("Numero");
-        modelo.addColumn("Colonia");
-        modelo.addColumn("Telefono");
         modelo.addColumn("Empresa");
+        modelo.addColumn("Calle");
+        modelo.addColumn("Colonia");
+        modelo.addColumn("Numero");
+        modelo.addColumn("Telefono");
 
     }
 

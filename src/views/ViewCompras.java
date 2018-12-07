@@ -55,20 +55,20 @@ public class ViewCompras extends javax.swing.JPanel {
         jb_buscar_proveedor1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jtb_producto = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
+        agregar_producto = new javax.swing.JButton();
+        js_cantidad = new javax.swing.JSpinner();
         jLabel21 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jtb_proveedor2 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
+        jtb_detalle = new javax.swing.JTable();
+        jb_finalizarcompra = new javax.swing.JButton();
         jl_fecha = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jLabel29 = new javax.swing.JLabel();
+        jb_eliminar = new javax.swing.JButton();
+        jl_total = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(76, 175, 80));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -211,7 +211,7 @@ public class ViewCompras extends javax.swing.JPanel {
         jtb_proveedor.setSelectionForeground(new java.awt.Color(254, 254, 254));
         jScrollPane4.setViewportView(jtb_proveedor);
 
-        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 430, 120));
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 430, 130));
 
         jButton4.setText("Seleccionar");
         jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 30));
@@ -270,39 +270,39 @@ public class ViewCompras extends javax.swing.JPanel {
         jtb_producto.setForeground(new java.awt.Color(1, 1, 1));
         jtb_producto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Descripcion", "Precio de Compra"
+                "ID", "Nombre", "Descripcion", "PCompra"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -321,9 +321,9 @@ public class ViewCompras extends javax.swing.JPanel {
 
         jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 430, 130));
 
-        jButton3.setText("Agregar");
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 30));
-        jPanel4.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 70, -1));
+        agregar_producto.setText("Agregar");
+        jPanel4.add(agregar_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 30));
+        jPanel4.add(js_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 70, -1));
 
         jLabel21.setBackground(new java.awt.Color(46, 125, 50));
         jLabel21.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -344,12 +344,12 @@ public class ViewCompras extends javax.swing.JPanel {
         jLabel24.setText("Compra");
         jPanel5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jtb_proveedor2.setAutoCreateRowSorter(true);
-        jtb_proveedor2.setBackground(new java.awt.Color(254, 254, 254));
-        jtb_proveedor2.setBorder(null);
-        jtb_proveedor2.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
-        jtb_proveedor2.setForeground(new java.awt.Color(1, 1, 1));
-        jtb_proveedor2.setModel(new javax.swing.table.DefaultTableModel(
+        jtb_detalle.setAutoCreateRowSorter(true);
+        jtb_detalle.setBackground(new java.awt.Color(254, 254, 254));
+        jtb_detalle.setBorder(null);
+        jtb_detalle.setFont(new java.awt.Font("AnjaliOldLipi", 0, 15)); // NOI18N
+        jtb_detalle.setForeground(new java.awt.Color(1, 1, 1));
+        jtb_detalle.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -376,7 +376,7 @@ public class ViewCompras extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Telefono", "Empresa"
+                "ID", "Nombre", "Precio Compra", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
@@ -394,16 +394,16 @@ public class ViewCompras extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jtb_proveedor2.setGridColor(new java.awt.Color(46, 125, 50));
-        jtb_proveedor2.setOpaque(false);
-        jtb_proveedor2.setSelectionBackground(new java.awt.Color(46, 125, 50));
-        jtb_proveedor2.setSelectionForeground(new java.awt.Color(254, 254, 254));
-        jScrollPane5.setViewportView(jtb_proveedor2);
+        jtb_detalle.setGridColor(new java.awt.Color(46, 125, 50));
+        jtb_detalle.setOpaque(false);
+        jtb_detalle.setSelectionBackground(new java.awt.Color(46, 125, 50));
+        jtb_detalle.setSelectionForeground(new java.awt.Color(254, 254, 254));
+        jScrollPane5.setViewportView(jtb_detalle);
 
         jPanel5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 760, 180));
 
-        jButton5.setText("Registrar Compra");
-        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 270, 170, 30));
+        jb_finalizarcompra.setText("Registrar Compra");
+        jPanel5.add(jb_finalizarcompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 270, 170, 30));
 
         jl_fecha.setBackground(new java.awt.Color(46, 125, 50));
         jl_fecha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -429,14 +429,14 @@ public class ViewCompras extends javax.swing.JPanel {
         jLabel28.setText("Subtotal");
         jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 80, 30));
 
-        jButton6.setText("Eliminar");
-        jPanel5.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 70, 90, 30));
+        jb_eliminar.setText("Eliminar");
+        jPanel5.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 70, 90, 30));
 
-        jLabel29.setBackground(new java.awt.Color(46, 125, 50));
-        jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(46, 125, 50));
-        jLabel29.setText("0.0");
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 60, 30));
+        jl_total.setBackground(new java.awt.Color(46, 125, 50));
+        jl_total.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jl_total.setForeground(new java.awt.Color(46, 125, 50));
+        jl_total.setText("0.0");
+        jPanel5.add(jl_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 60, 30));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 1270, 320));
 
@@ -465,10 +465,8 @@ public class ViewCompras extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
+    public javax.swing.JButton agregar_producto;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -482,7 +480,6 @@ public class ViewCompras extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -493,14 +490,17 @@ public class ViewCompras extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JSpinner jSpinner1;
     public javax.swing.JButton jb_buscar_producto;
     public javax.swing.JButton jb_buscar_proveedor;
     public javax.swing.JButton jb_buscar_proveedor1;
+    public javax.swing.JButton jb_eliminar;
+    public javax.swing.JButton jb_finalizarcompra;
     public javax.swing.JLabel jl_fecha;
+    public javax.swing.JLabel jl_total;
+    public javax.swing.JSpinner js_cantidad;
+    public javax.swing.JTable jtb_detalle;
     public javax.swing.JTable jtb_producto;
     public javax.swing.JTable jtb_proveedor;
-    public javax.swing.JTable jtb_proveedor2;
     public javax.swing.JTextField jtf_buscar_producto;
     public javax.swing.JTextField jtf_buscar_proveedor;
     public javax.swing.JTextField jtf_empresa;

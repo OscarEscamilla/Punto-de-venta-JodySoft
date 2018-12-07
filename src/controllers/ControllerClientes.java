@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import models.ModelClientes;
 import views.ViewClientes;
 
@@ -26,6 +28,7 @@ public class ControllerClientes {
         setKeyListener();
         initDB();
         initComponents();
+        setMouseListener();
     }
 
     public void initComponents() {
@@ -42,7 +45,7 @@ public class ControllerClientes {
         viewClientes.jb_cancelar.setEnabled(false);
         viewClientes.jb_guardar.setEnabled(false);
         viewClientes.jtf_id_cliente.setVisible(false);
-
+        viewClientes.jcb_tipo.setEditable(false);
         tablaClientesActionPerformed();
 
     }
@@ -97,6 +100,53 @@ public class ControllerClientes {
         }
     };
     
+    
+    public void setMouseListener(){
+        viewClientes.jtb_clientes.addMouseListener(mouseListener);
+    }
+    MouseListener mouseListener = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+           int fila = viewClientes.jtb_clientes.getSelectedRow();
+           
+           String tipo = (String) viewClientes.jtb_clientes.getValueAt(fila, 7);
+           int index = 0;
+           if("General".equals(tipo)){
+               index = 0;
+           }else if("Factura".equals(tipo)){
+               index= 1;
+           }
+           viewClientes.jtf_id_cliente.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 0));
+           viewClientes.jtf_nombre.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 1));
+           viewClientes.jtf_ape_paterno.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 2));
+           viewClientes.jtf_ape_materno.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 3));
+           viewClientes.jtf_calle.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 4));
+           viewClientes.jtf_colonia.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 5));
+           viewClientes.jtf_numero.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 6));
+           viewClientes.jcb_tipo.setSelectedIndex(index);
+           viewClientes.jtf_telefono.setText((String) viewClientes.jtb_clientes.getValueAt(fila, 8));
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+          
+        }
+    };
     
        public void setKeyListener(){
         viewClientes.jtf_buscar.addKeyListener(keyListener);
@@ -222,6 +272,7 @@ public class ControllerClientes {
     }
 
     private void getValues() {
+        
 
         viewClientes.jtf_id_cliente.setText(modelClientes.getId_cliente());
         viewClientes.jtf_nombre.setText(modelClientes.getNombre());
@@ -255,6 +306,7 @@ public class ControllerClientes {
         viewClientes.jtf_colonia.setEditable(true);
         viewClientes.jtf_nombre.setEditable(true);
         viewClientes.jtf_telefono.setEditable(true);
+        viewClientes.jcb_tipo.setEditable(true);
 
     }
 
@@ -266,6 +318,7 @@ public class ControllerClientes {
         viewClientes.jtf_colonia.setEditable(false);
         viewClientes.jtf_nombre.setEditable(false);
         viewClientes.jtf_telefono.setEditable(false);
+        viewClientes.jcb_tipo.setEditable(false);
     }
 
 }
